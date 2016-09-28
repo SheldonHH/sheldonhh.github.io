@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Uncompleted,Tech," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,15 @@
 
 
 
-<meta name="description" content="There is a String s, we need to split the String to String array. We need to ensure that every element in the String array is a Palindrome Partition.Calculate the least number of cut to reach the goal">
-<meta property="og:type" content="article">
-<meta property="og:title" content="String to String Array Palindrome">
-<meta property="og:url" content="http://xipingsg.com/2016/09/24/Algo/Split String to Palim/index.html">
+<meta name="description" content="Ever-growing brain">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sheldon Huang">
+<meta property="og:url" content="http://xipingsg.com/categories/Algorithm/index.html">
 <meta property="og:site_name" content="Sheldon Huang">
-<meta property="og:description" content="There is a String s, we need to split the String to String array. We need to ensure that every element in the String array is a Palindrome Partition.Calculate the least number of cut to reach the goal">
-<meta property="og:updated_time" content="2016-09-28T13:17:08.000Z">
+<meta property="og:description" content="Ever-growing brain">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String to String Array Palindrome">
-<meta name="twitter:description" content="There is a String s, we need to split the String to String array. We need to ensure that every element in the String array is a Palindrome Partition.Calculate the least number of cut to reach the goal">
+<meta name="twitter:title" content="Sheldon Huang">
+<meta name="twitter:description" content="Ever-growing brain">
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://xipingsg.com/2016/09/24/Algo/Split String to Palim/"/>
+  <link rel="canonical" href="http://xipingsg.com/categories/Algorithm/"/>
 
-  <title> String to String Array Palindrome | Sheldon Huang </title>
+  <title> Category: alog | Sheldon Huang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -146,7 +145,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,151 +223,75 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                String to String Array Palindrome
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T19:35:44+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">alog</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><u>There is a String s, we need to split the String to String array. We need to ensure that <strong>every element</strong> in the String array is a Palindrome Partition.Calculate the least number of cut to reach the goal?</u></p>
-<p>Emunerate every <strong>char</strong> from the s.length - 1 to left </p>
-<p>if isPalim</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isPalimdrome</span><span class="params">(String s)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> start = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> end = s.length - <span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span> (start &lt; s.length / <span class="number">2</span> ; start++)&#123;</div><div class="line">      <span class="keyword">if</span>(s.charAt(start) != s.charAt(end))&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">      &#125;</div><div class="line">      end--</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for(int )</div><div class="line">s.subList(end, end-i);</div></pre></td></tr></table></figure>
-
-      
+  <section id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        alog
+        <small>Category</small>
+      </h2>
     </div>
 
-    <div>
+    
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-
-      
-    </div>
-
-    <div>
-      
+            <a class="post-title-link" href="/2016/09/25/Algo/Backpack/" itemprop="url">
+              
+                <span itemprop="name">Backpack series and Dynamics Programming</span>
+              
+            </a>
         
+      </h1>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-25T21:15:48+08:00"
+              content="2016-09-25" >
+          09-25
+        </time>
+      </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Uncompleted/" rel="tag">#Uncompleted</a>
-          
-            <a href="/tags/Tech/" rel="tag">#Tech</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/23/Why Hexo/" rel="next" title="Why Hexo">
-                <i class="fa fa-chevron-left"></i> Why Hexo
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/25/Big Data/Learn Hadoop/" rel="prev" title="Hadoop Fly">
-                Hadoop Fly <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-    </div>
-  </div>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/09/24/Algo/Split String to Palim/" itemprop="url">
+              
+                <span itemprop="name">String to String Array Palindrome</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-24T19:35:44+08:00"
+              content="2016-09-24" >
+          09-24
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+  </section>
+
+  
+
 
 
           </div>
@@ -376,10 +299,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -399,17 +318,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://developer.github.com/assets/images/electrocat.png"
@@ -459,17 +369,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -573,10 +472,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 

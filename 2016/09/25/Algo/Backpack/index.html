@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Uncompleted,Tech," />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="Backpack series and Dynamics ProgrammingGet down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
-123456789101112131415f(10) =">
+<meta name="description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sheldon Huang">
+<meta property="og:title" content="Backpack series and Dynamics Programming">
 <meta property="og:url" content="http://xipingsg.com/2016/09/25/Algo/Backpack/index.html">
 <meta property="og:site_name" content="Sheldon Huang">
-<meta property="og:description" content="Backpack series and Dynamics ProgrammingGet down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
-123456789101112131415f(10) =">
-<meta property="og:updated_time" content="2016-09-26T05:31:24.000Z">
+<meta property="og:description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
+<meta property="og:updated_time" content="2016-09-28T13:16:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sheldon Huang">
-<meta name="twitter:description" content="Backpack series and Dynamics ProgrammingGet down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
-123456789101112131415f(10) =">
+<meta name="twitter:title" content="Backpack series and Dynamics Programming">
+<meta name="twitter:description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
 
 
 
@@ -119,7 +119,7 @@
 
   <link rel="canonical" href="http://xipingsg.com/2016/09/25/Algo/Backpack/"/>
 
-  <title>  | Sheldon Huang </title>
+  <title> Backpack series and Dynamics Programming | Sheldon Huang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -248,7 +248,7 @@
             
             
               
-                
+                Backpack series and Dynamics Programming
               
             
           </h1>
@@ -265,6 +265,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">alog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -288,8 +307,7 @@
       
 
       
-        <hr>
-<h2 id="Backpack-series-and-Dynamics-Programming"><a href="#Backpack-series-and-Dynamics-Programming" class="headerlink" title="Backpack series and Dynamics Programming"></a>Backpack series and Dynamics Programming</h2><h2 id="Get-down-stairs"><a href="#Get-down-stairs" class="headerlink" title="Get down stairs"></a>Get down stairs</h2><p>There are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  </p>
+        <h2 id="Get-down-stairs"><a href="#Get-down-stairs" class="headerlink" title="Get down stairs"></a>Get down stairs</h2><p>There are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">f(<span class="number">10</span>) = f(<span class="number">8</span>) + f(<span class="number">7</span>)</div><div class="line">f(<span class="number">0</span>) = <span class="number">1</span>; <span class="comment">// do nothing is also an option to reach here</span></div><div class="line">f(<span class="number">2</span>) = f(<span class="number">0</span>) + f(-<span class="number">1</span>);<span class="comment">//Jump from -1 level which is zero or jump </span></div><div class="line">f(<span class="number">2</span>) = f(<span class="number">0</span>) + <span class="number">0</span>;</div><div class="line"></div><div class="line">f(<span class="number">1</span>) = <span class="number">0</span>; <span class="comment">// There is no way to jump to 1 level</span></div><div class="line">f(<span class="number">3</span>) = f(<span class="number">1</span>) + f(<span class="number">0</span>) = <span class="number">0</span> + <span class="number">1</span> = <span class="number">1</span></div><div class="line">f(<span class="number">4</span>) = f(<span class="number">2</span>) + f(<span class="number">1</span>) = <span class="number">1</span> + <span class="number">0</span> = <span class="number">1</span></div><div class="line">f(<span class="number">5</span>) = f(<span class="number">3</span>) + f(<span class="number">2</span>) = <span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span></div><div class="line"> ....</div><div class="line">f(<span class="number">10</span>) = f(<span class="number">8</span>) + f(<span class="number">7</span>) = <span class="number">7</span></div><div class="line">  </div><div class="line">  <span class="function">Complexity <span class="title">O</span><span class="params">(n)</span>: recursion</span></div><div class="line"><span class="title">f</span><span class="params">(<span class="number">6</span>)</span> can both jump to <span class="title">f</span><span class="params">(<span class="number">8</span>)</span> and <span class="title">f</span><span class="params">(<span class="number">9</span>)</span><span class="comment">// reverse thinking</span></div></pre></td></tr></table></figure>
 <p>10 floor, you can step up 2 or 3, how many ways to arrive the 10th from 0th</p>
 <h4 id="Backpack-Issue-1"><a href="#Backpack-Issue-1" class="headerlink" title="Backpack Issue 1:"></a>Backpack Issue 1:</h4><p>n items, every items volume is (Integer) A[i] (1 &lt;= i &lt;=n) sorted?, every backpack’s volumn is integer m. What is the <strong>maximum</strong> volume of items can the backpack hold?</p>
@@ -375,21 +393,29 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Uncompleted/" rel="tag">#Uncompleted</a>
+          
+            <a href="/tags/Tech/" rel="tag">#Tech</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/25/Big Data/Learn Hadoop/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/09/25/Big Data/Learn Hadoop/" rel="next" title="Hadoop Fly">
+                <i class="fa fa-chevron-left"></i> Hadoop Fly
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/28/Operation System/Terminal Basic/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/28/Operation System/Terminal Basic/" rel="prev" title="String to String Array Palindrome">
+                String to String Array Palindrome <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -464,7 +490,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -490,7 +530,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-series-and-Dynamics-Programming"><span class="nav-number">1.</span> <span class="nav-text">Backpack series and Dynamics Programming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-down-stairs"><span class="nav-number">2.</span> <span class="nav-text">Get down stairs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Backpack-Issue-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">Backpack Issue 1:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-2-add-Value"><span class="nav-number">3.</span> <span class="nav-text">Backpack Issue 2 add Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-3-Unlimited-number-of-items"><span class="nav-number">4.</span> <span class="nav-text">Backpack Issue 3 Unlimited number of items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-4-how-many-ways-in-total"><span class="nav-number">5.</span> <span class="nav-text">Backpack Issue 4 how many ways in total</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-down-stairs"><span class="nav-number">1.</span> <span class="nav-text">Get down stairs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Backpack-Issue-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">Backpack Issue 1:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-2-add-Value"><span class="nav-number">2.</span> <span class="nav-text">Backpack Issue 2 add Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-3-Unlimited-number-of-items"><span class="nav-number">3.</span> <span class="nav-text">Backpack Issue 3 Unlimited number of items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-4-how-many-ways-in-total"><span class="nav-number">4.</span> <span class="nav-text">Backpack Issue 4 how many ways in total</span></a></li></ol></div>
             
           </div>
         </section>
