@@ -267,6 +267,191 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/13/MapReduce Naive Questions/" itemprop="url">
+                  MapReduce Naive Questions
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T20:52:15+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MapReduce-Questions"><a href="#MapReduce-Questions" class="headerlink" title="MapReduce Questions"></a>MapReduce Questions</h2><ol>
+<li><p>How to ensure the thread running in order?</p>
+<p>use the <strong>join</strong> method</p>
+<p>​</p>
+</li>
+<li><p>Forkjoin?</p>
+<ol>
+<li>implementation of <strong>ExecutorsSerivce</strong> interface</li>
+<li>take advantages of multiple processors<ul>
+<li>hard to balance task load across threads</li>
+<li>excessive overhead </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h5 id="Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking"><a href="#Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking" class="headerlink" title="Is ReadWriteLock (interface) the only solution for read&amp;write locking?"></a>Is <strong>ReadWriteLock</strong> <em>(interface)</em> the only solution for read&amp;write locking?</h5><ol>
+<li><p>MultiVersioning Consistency Control or MVCC</p>
+</li>
+<li><p>Most Relational database use MVCC</p>
+</li>
+<li><p>Operational Transformations (Google docs)</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><h2 id="volatile-vs-synchronize-vs-Lock"><a href="#volatile-vs-synchronize-vs-Lock" class="headerlink" title="volatile vs synchronize vs Lock"></a>volatile vs synchronize vs Lock</h2><ol>
+<li><h5 id="Volatile（guarantee-atomic）"><a href="#Volatile（guarantee-atomic）" class="headerlink" title="Volatile（guarantee atomic）"></a>Volatile（guarantee atomic）</h5></li>
+<li><p>changes to a <code>volatile</code> variable are always visible to other threads.</p>
+</li>
+<li><p><strong>volatile:</strong> guarantees the visibility of changes to variable across threads</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedObject</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>will be written back to main memory immediately by implementing volatile</p>
+<p>The <code>counter</code> variable in CPU cache may not be the same as in the Main Memory when two threads are trying to modify the counters synchronizely</p>
+<p><img src="http://tutorials.jenkov.com/images/java-concurrency/java-volatile-2.png" alt=""></p>
+<ol>
+<li>Reading and writing of volatile variables causes the variable to be read or written to main memory. Reading from and writing to main memory is <strong>more expensive</strong> than accessing the CPU cache</li>
+<li>only use volatile variables when you <strong>really need to enforce visibility of variables.</strong></li>
+<li>if two threads are <strong>both reading and writing to a shared variable</strong>, then using the <code>volatile</code> keyword for that is not enough. You need to use a <strong><a href="http://tutorials.jenkov.com/java-concurrency/synchronized.html" target="_blank" rel="external">synchronized</a></strong> in that case to <strong>guarantee</strong> that the reading and writing of the variable is <strong>atomic</strong>.</li>
+<li>As an alternative to a <code>synchronized</code> block you could also use one of the many atomic data types found in the <a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="external"><code>java.util.concurrent</code> package</a>. For instance, the <a href="http://tutorials.jenkov.com/java-util-concurrent/atomiclong.html" target="_blank" rel="external"><code>AtomicLong</code></a> or <a href="http://tutorials.jenkov.com/java-util-concurrent/atomicreference.html" target="_blank" rel="external"><code>AtomicReference</code></a> or one of the others.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>What is <strong>atomic action vs complex action</strong> ?</p>
+<ol>
+<li><p><strong>atomic action</strong></p>
+<ol>
+<li>Reads and writes are atomic for reference variables and for most primitive variables (all types except <code>long</code> and <code>double</code>).</li>
+<li>Reads and writes are atomic for <em>all</em> variables <u><strong>declared <code>volatile</code></strong></u> (<em>including</em> <code>long</code> and <code>double</code> variables).</li>
+</ol>
+</li>
+<li><p><strong>complex action</strong></p>
+<ol>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c++</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html" target="_blank" rel="external"><strong>Executors</strong></a>  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank" rel="external"><code>java.util.concurrent.ThreadPoolExecutor</code></a></p>
+<ol>
+<li><strong>Executor Interfaces</strong><ol>
+<li><strong><u>Executor</u></strong>: <code>e.execute(r);</code> <strong>e: Executor Object</strong>; <strong>r: Runnable Object</strong></li>
+<li><strong><u>ExecutorService:</u></strong> Like <code>execute</code>, <code>submit</code> accepts <code>Runnable</code> objects, but also accepts <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html" target="_blank" rel="external"><code>Callable</code></a> objects, which allow the task to return a  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html" target="_blank" rel="external"><code>Future</code></a> value.</li>
+</ol>
+</li>
+<li><strong><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html" target="_blank" rel="external">Thread Pool</a></strong><ol>
+<li><ul>
+<li><strong>fixed thread pool</strong> ensure degrade gracefully each HTTP request is handled by a separate thread.</li>
+<li>Applications create <u>new thread</u> for <u>new HTTP request</u>, the system will receive more request beyond its limitation</li>
+<li>Without setting a limitation, the  the application will suddenly stop responding to <em>all</em> requests.</li>
+<li>With a limit on the number of the threads that can be created, the application will not be servicing HTTP requests as quickly as they come in, but it will be servicing them as quickly as the system can sustain.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>​</li>
+<li>Fork / Join</li>
+</ol>
+<ul>
+<li>They implement a <strong>work-stealing algorithm</strong> in that idle workers <code>steal</code> the work from those workers who are busy.</li>
+<li>Fork-Join breaks the task at hand into mini-tasks </li>
+<li>ideally no worker thread is idle </li>
+</ul>
+</li>
+</ol>
+<p><img src="http://howtodoinjava.com/wp-content/uploads/2014/05/fork-join-framework.png" alt=""></p>
+<h4 id="优雅降级的视角-Graceful-Degradation"><a href="#优雅降级的视角-Graceful-Degradation" class="headerlink" title="优雅降级的视角 Graceful Degradation"></a>优雅降级的视角 Graceful Degradation</h4><p>优雅降级关注于在最先进/最全能的浏览器上构建网站。在被认为“老的”或能力不足的浏览器中的测试，经常要等到开发周期的最后一个环节才进行，并且通常限制在主流浏览器（如IE、Mozzila等）的前一个发布版本中。</p>
+<p>在这种模式下，老的浏览器只可能提供差强人意（poor, but passable）的体验。或许会做些小补丁来适应某个特定浏览器，但这些浏览器毕竟不是关注的焦点，除了修正重大的错误，也不会再费多大的神了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
                   Zero to One
                 </a>
@@ -1393,7 +1578,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/tree/master/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
