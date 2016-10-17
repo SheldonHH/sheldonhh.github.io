@@ -1,0 +1,738 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="DAC issues:
+too coarse-grained and over-privileged
+Completely trusted, Completed untrusted
+
+Advantages of MAC
+MAC: SELinux enforces an administratively-defined security policy over all processes and o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SELinux">
+<meta property="og:url" content="http://xipingsg.com/2016/10/14/安全/SELinux week3/index.html">
+<meta property="og:site_name" content="Sheldon Huang">
+<meta property="og:description" content="DAC issues:
+too coarse-grained and over-privileged
+Completely trusted, Completed untrusted
+
+Advantages of MAC
+MAC: SELinux enforces an administratively-defined security policy over all processes and o">
+<meta property="og:updated_time" content="2016-10-14T06:15:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SELinux">
+<meta name="twitter:description" content="DAC issues:
+too coarse-grained and over-privileged
+Completely trusted, Completed untrusted
+
+Advantages of MAC
+MAC: SELinux enforces an administratively-defined security policy over all processes and o">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://xipingsg.com/2016/10/14/安全/SELinux week3/"/>
+
+  <title> SELinux | Sheldon Huang </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84675629-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sheldon Huang</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/xipingsg.com" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/tree/master/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://about.me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/tree/master/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tree/master/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SELinux
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T13:22:33+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="DAC-issues"><a href="#DAC-issues" class="headerlink" title="DAC issues:"></a>DAC issues:</h4><ol>
+<li>too coarse-grained and over-privileged</li>
+<li>Completely trusted, Completed untrusted</li>
+</ol>
+<h4 id="Advantages-of-MAC"><a href="#Advantages-of-MAC" class="headerlink" title="Advantages of MAC"></a>Advantages of MAC</h4><ul>
+<li>MAC: SELinux enforces an administratively-defined security policy over all processes and objects in system</li>
+<li>protect against </li>
+</ul>
+<h4 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h4><p>general architecture for MAC</p>
+<ul>
+<li>flexible support for MAC policies</li>
+<li>SELinux is an application of the Flask architecture in the Linus operating system</li>
+</ul>
+<h2 id="A3-2-Architecutre"><a href="#A3-2-Architecutre" class="headerlink" title="A3.2 Architecutre"></a>A3.2 Architecutre</h2><p>Flask concepts:</p>
+<ul>
+<li>Subject: process</li>
+<li>Object: file scocket, IPC object</li>
+<li>Security contextL a collection of security attributes assigned to a subject or object</li>
+<li>Security identifiers(SID) map to <u>security contexts</u><ul>
+<li>User space SIDs are maintained by user space access vector cache(AVC) in libselinx</li>
+</ul>
+</li>
+</ul>
+<h4 id="Security-Decsion"><a href="#Security-Decsion" class="headerlink" title="Security Decsion"></a>Security Decsion</h4><p>made by the security server based on a pair of SIDs and an object security class </p>
+<ul>
+<li><strong>Object security class:</strong> type of objects(e.g.: process, file, directory, TCP socket)</li>
+<li><strong>Libeling decision:</strong> transition decisions: specify default security attributes for anew subject / object</li>
+<li><strong>Access decisions:</strong> specify whether or not a permission is granted for a given pair of SIDs and class<ul>
+<li>AVC maintains allowed access vector(decisions for all the permissions defined for an object)</li>
+<li>Auditing vectors: <u>auditallow</u> and <u>auditdeny</u></li>
+</ul>
+</li>
+</ul>
+<h4 id="Flask-Defintion"><a href="#Flask-Defintion" class="headerlink" title="Flask Defintion"></a>Flask Defintion</h4><ul>
+<li>Configuration files define<ul>
+<li>Flask security classes: security_class</li>
+<li>Initial SIDs: initial_sids</li>
+<li>Access vector permissions: access_vectors</li>
+<li>This files are shared between SELinus kernel and example policy configuration</li>
+<li>Source of the files: policy / flask</li>
+<li>Installed files when policy confiugration is compiled</li>
+</ul>
+</li>
+</ul>
+<h2 id="A3-3-Security-Model"><a href="#A3-3-Security-Model" class="headerlink" title="A3.3: Security Model"></a>A3.3: Security Model</h2><ol>
+<li>A combination of <u><em>Type Enforcement(TE)</em></u> and <u><em>Identity-Based  Access Control(IBAC)</em>,  <em>RBAC</em>,</u> and <u><em>optional MLS</em></u><ol>
+<li>TE provides fine-grained control over processes and objects</li>
+<li>RBAC provides a high level of abstraction to simplify user management</li>
+</ol>
+</li>
+</ol>
+<h4 id="Traditional-TE"><a href="#Traditional-TE" class="headerlink" title="Traditional TE"></a>Traditional TE</h4><ul>
+<li>Domain →  process</li>
+<li>Type →  object</li>
+<li>A pair of access matrices<ul>
+<li>How domains can access types </li>
+<li>How domains can interact with other domains</li>
+<li>What types of program can be executed to enter a domain</li>
+<li>A domain → an entrypoint program and / or shared libraries</li>
+</ul>
+</li>
+<li>Each user is authorized to operate in certain domains<ul>
+<li>(e.g. untrusted_app)</li>
+</ul>
+</li>
+</ul>
+<h4 id="SELinux-TE"><a href="#SELinux-TE" class="headerlink" title="SELinux TE"></a>SELinux TE</h4><ul>
+<li>A single type attribute in the security context for both processes and objects<ul>
+<li>A <strong>single type</strong> can be used both as the <u><strong>domain of a process</strong></u> and as the <u><strong>type of a related object</strong></u>(e.g. /proc/PID entires for a process)</li>
+<li>A <strong>single matrix</strong> specify can acess or interact with other types in terms of permisssion defined in the Flask architecture</li>
+</ul>
+</li>
+<li>Access Decision is based on <ul>
+<li>A type pair and security class</li>
+<li>Objects of the smae type but different classes may be treated differently(TCP sokcet and IP socket)</li>
+</ul>
+</li>
+<li>SELinux TE<ul>
+<li>doesnot associate users with domains<ul>
+<li>RBAC is used to provided additional layer between users and domains</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h6 id="TE-transition-Rules-for-process-specifies-the-new-domain-based-on-the-current-domain-of-the-process-and-the-type-of-the-program-For-object-specifies-the-new-type-based-on-the-domain-of-the-creating-process-the-type-of-the-related-object-and-the-object-security-class"><a href="#TE-transition-Rules-for-process-specifies-the-new-domain-based-on-the-current-domain-of-the-process-and-the-type-of-the-program-For-object-specifies-the-new-type-based-on-the-domain-of-the-creating-process-the-type-of-the-related-object-and-the-object-security-class" class="headerlink" title="### TE transition Rules,,- for process,  - specifies the new domain based on the current domain of the process  and the type of the program,- For object,  - specifies the new type based on the domain of the creating process, the type of the related object and the object security class"></a>### TE transition Rules,,- for process,  - specifies the new domain based on the current domain of the process  and the type of the program,- For object,  - specifies the new type based on <em><u>the domain of the creating process</u></em>, the <u><em>type of the related objec</em>t</u> and the <u><em>object security class</em></u></h6></li>
+</ul>
+<h2 id="TE-Access-Vector-Rule"><a href="#TE-Access-Vector-Rule" class="headerlink" title="TE Access Vector Rule"></a>TE Access Vector Rule</h2><ul>
+<li>The TE access matrix = a collection of access(access vector rule policy)</li>
+<li>specifies an access vector for a <u><em>collection of type p</em>airs</u> and <u><em>object security classes</em></u></li>
+<li>Kinds of access vector: <em>allow</em>, <em>auditallow</em>, <em>auditdeny</em></li>
+<li>Default behavior if no matching rule<ul>
+<li><strong>Closed policy</strong>: permissions are <em>denied</em> unless there is an explicit allow rule</li>
+<li>No permissions are audited unless there is an explicit audit allow rule</li>
+<li>Permissions are always audited when denied unless there is an explicit dont audit rule</li>
+</ul>
+</li>
+</ul>
+<h2 id="RBAC-Model"><a href="#RBAC-Model" class="headerlink" title="RBAC Model"></a>RBAC Model</h2><h5 id="SELinux-RBAC"><a href="#SELinux-RBAC" class="headerlink" title="SELinux RBAC"></a>SELinux RBAC</h5><ul>
+<li>Authorizes each user for a set of roles</li>
+<li>Authorizes each role for a set of TE domains</li>
+<li>A role domain relationship can be specified to define a hierarchy among roles</li>
+<li>Permissions are assigned according to TE configuration</li>
+</ul>
+<h5 id="Role-attribute-in-security-context"><a href="#Role-attribute-in-security-context" class="headerlink" title="Role attribute in security context"></a>Role attribute in security context</h5><ul>
+<li>A role attribute is maintained for each process</li>
+<li>The role attribute for an object is object_r but unused</li>
+<li><u>RBAC configuration</u> specifies authorized transitions <strong><em>between roles based on the pair of roles</em></strong> which are limited to certain TE domains in policy</li>
+</ul>
+<h3 id="User-Identity-Model"><a href="#User-Identity-Model" class="headerlink" title="User Identity Model"></a>User Identity Model</h3><ul>
+<li>Linux uids are often changed <ul>
+<li>via the setuid calls</li>
+<li>By the superuser processes</li>
+</ul>
+</li>
+<li>SELinux maintains a user identity atttribute in security context<ul>
+<li>Independent of Linux user identity attributes</li>
+<li>Can changed by certain TE domains only (e.g. login program)</li>
+</ul>
+</li>
+</ul>
+<h3 id="A-3-4-1-Policy-Languages"><a href="#A-3-4-1-Policy-Languages" class="headerlink" title="A.3.4.1 Policy Languages"></a>A.3.4.1 Policy Languages</h3><p>policy -&gt; flask te_rbac users opt_constraints contexts</p>
+<h3 id="A3-4-1-Syntax-of-TE-and-RBAC-Configuration"><a href="#A3-4-1-Syntax-of-TE-and-RBAC-Configuration" class="headerlink" title="A3.4.1 Syntax of TE and RBAC Configuration"></a>A3.4.1 Syntax of TE and RBAC Configuration</h3><ul>
+<li>te_rbac -&gt; te_rbac_statement | te_rbac_statement (| means or)</li>
+<li>te_rbac_statement -&gt; te_statement | rbac_statement</li>
+<li>te_statement -&gt; attrib_decl | type_decl | type_transition_rule | type_change_rule | te_av_rule | te_assertion</li>
+<li>rbac_statement -&gt; role_decl | role_dominance | role_allow_rule</li>
+</ul>
+<h3 id="A3-4-2-TE-Statements"><a href="#A3-4-2-TE-Statements" class="headerlink" title="A3.4.2 TE Statements"></a>A3.4.2 TE Statements</h3><ul>
+<li>te_rbac_statement -&gt; te_statment</li>
+</ul>
+<h4 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/13/MapReduce Naive Questions/" rel="next" title="MapReduce Naive Questions">
+                <i class="fa fa-chevron-left"></i> MapReduce Naive Questions
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://developer.github.com/assets/images/electrocat.png"
+               alt="Serendipity" />
+          <p class="site-author-name" itemprop="name">Serendipity</p>
+          <p class="site-description motion-element" itemprop="description">Ever-growing brain</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/tree/master/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/tree/master/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tree/master/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#DAC-issues"><span class="nav-number">1.</span> <span class="nav-text">DAC issues:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Advantages-of-MAC"><span class="nav-number">2.</span> <span class="nav-text">Advantages of MAC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flask"><span class="nav-number">3.</span> <span class="nav-text">Flask</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A3-2-Architecutre"><span class="nav-number"></span> <span class="nav-text">A3.2 Architecutre</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Security-Decsion"><span class="nav-number">1.</span> <span class="nav-text">Security Decsion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flask-Defintion"><span class="nav-number">2.</span> <span class="nav-text">Flask Defintion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A3-3-Security-Model"><span class="nav-number"></span> <span class="nav-text">A3.3: Security Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Traditional-TE"><span class="nav-number">1.</span> <span class="nav-text">Traditional TE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SELinux-TE"><span class="nav-number">2.</span> <span class="nav-text">SELinux TE</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#TE-transition-Rules-for-process-specifies-the-new-domain-based-on-the-current-domain-of-the-process-and-the-type-of-the-program-For-object-specifies-the-new-type-based-on-the-domain-of-the-creating-process-the-type-of-the-related-object-and-the-object-security-class"><span class="nav-number">2.0.1.</span> <span class="nav-text">### TE transition Rules,,- for process,  - specifies the new domain based on the current domain of the process  and the type of the program,- For object,  - specifies the new type based on the domain of the creating process, the type of the related object and the object security class</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TE-Access-Vector-Rule"><span class="nav-number"></span> <span class="nav-text">TE Access Vector Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC-Model"><span class="nav-number"></span> <span class="nav-text">RBAC Model</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SELinux-RBAC"><span class="nav-number">0.1.</span> <span class="nav-text">SELinux RBAC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Role-attribute-in-security-context"><span class="nav-number">0.2.</span> <span class="nav-text">Role attribute in security context</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-Identity-Model"><span class="nav-number"></span> <span class="nav-text">User Identity Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-3-4-1-Policy-Languages"><span class="nav-number"></span> <span class="nav-text">A.3.4.1 Policy Languages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A3-4-1-Syntax-of-TE-and-RBAC-Configuration"><span class="nav-number"></span> <span class="nav-text">A3.4.1 Syntax of TE and RBAC Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A3-4-2-TE-Statements"><span class="nav-number"></span> <span class="nav-text">A3.4.2 TE Statements</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Type"><span class="nav-number">1.</span> <span class="nav-text">Type</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Serendipity</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
