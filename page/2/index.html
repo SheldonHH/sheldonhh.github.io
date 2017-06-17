@@ -87,7 +87,7 @@
 <meta name="description" content="Ever-growing brain">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sheldon Huang">
-<meta property="og:url" content="http://xipingsg.com/page/2/index.html">
+<meta property="og:url" content="http://xipingsg.github.io/page/2/index.html">
 <meta property="og:site_name" content="Sheldon Huang">
 <meta property="og:description" content="Ever-growing brain">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
 
 
 
-  <link rel="canonical" href="http://xipingsg.com/page/2/"/>
+  <link rel="canonical" href="http://xipingsg.github.io/page/2/"/>
 
   <title> Sheldon Huang </title>
 </head>
@@ -180,7 +180,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/xipingsg.com" rel="section">
+          <a href="https://xipingsg.github.io" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -220,7 +220,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tree/master/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -245,6 +245,342 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/25/Big Data/Learn Hadoop/" itemprop="url">
+                  Hadoop Fly
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T17:12:52+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/big-data/" itemprop="url" rel="index">
+                    <span itemprop="name">big data</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>GRANT ALL ON <em>.</em> to ‘root’@’192.168.1.10’ IDENTIFIED BY ‘root’; //enable remote data transfer</p>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’192.168.1.10’ WITH GRANT OPTION;</p>
+<p>CREATE USER ‘root’@’%’ IDENTIFIED BY ‘password’;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/24/Algo/Split String to Palim/" itemprop="url">
+                  String to String Array Palindrome
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-24T19:35:44+08:00" content="2016-09-24">
+              2016-09-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">alog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><u>There is a String s, we need to split the String to String array. We need to ensure that <strong>every element</strong> in the String array is a Palindrome Partition.Calculate the least number of cut to reach the goal?</u></p>
+<p>Emunerate every <strong>char</strong> from the s.length - 1 to left </p>
+<p>if isPalim</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isPalimdrome</span><span class="params">(String s)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> start = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> end = s.length - <span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span> (start &lt; s.length / <span class="number">2</span> ; start++)&#123;</div><div class="line">      <span class="keyword">if</span>(s.charAt(start) != s.charAt(end))&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">      &#125;</div><div class="line">      end--</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for(int )</div><div class="line">s.subList(end, end-i);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/23/Why Hexo/" itemprop="url">
+                  Why Hexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Why-Hexo"><a href="#Why-Hexo" class="headerlink" title="Why Hexo?"></a>Why Hexo?</h3><p>There are some static blog framework like Jekyll, Hexo</p>
+<ol>
+<li>Jerky is based on Ruby, hence you need the Ruby environment.</li>
+<li>Hero is base on NodeJS which has less bug and hard-fork</li>
+<li>The preview session in Jekyll is primitive, you can go <code>localhost:4000</code> </li>
+<li>Hexo has more themes than Jekyll</li>
+<li>Sir Xiaolai use Hexo</li>
+</ol>
+<p><a href="https://hexo.io/zh-cn/docs/front-matter.html#" target="_blank" rel="external">https://hexo.io/zh-cn/docs/front-matter.html#</a></p>
+<p><a href="https://hexo.io/docs/troubleshooting.html#Error-with-DTrace-Mac-OS-X" target="_blank" rel="external">Error on DTrace</a></p>
+<p>New shortcut</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -463,6 +799,120 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/23/Hexo Create Tags/" itemprop="url">
+                  Hexo Create Tags
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Terminal 进入yourname.github.io folder之后</p>
+<ol>
+<li>新建一个page，在/source/里面显示为一个新的文件夹tags</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
+<p><img src="https://pbs.twimg.com/media/DCdbzbmU0AEUfQN.jpg" alt=""></p>
+<ol>
+<li><p>打开tags文件夹中的index.md</p>
+<p><img src="https://pbs.twimg.com/media/DCdcOgOUIAALcYc.jpg" alt=""></p>
+</li>
+</ol>
+<p><img src="https://pbs.twimg.com/media/DCdcpBJUwAAzNA8.jpg" alt=""></p>
+<ol>
+<li>在菜单中添加链接。编辑 <strong>主题配置文件</strong> ，添加 tags 到 menu 中，如下:</li>
+</ol>
+<p>yourname.github.io/themes/next/_config.yml</p>
+<p>另外一个同名文件位于yourname.github.io/_config.yml的</p>
+<p><strong>不要找错</strong></p>
+<p><img src="https://pbs.twimg.com/media/DCdfIIKV0AAVrkS.jpg" alt=""></p>
+<p>/tags 是根据source里面的顺序排列</p>
+<p><img src="https://pbs.twimg.com/media/DCde4ywUQAImMvS.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -508,7 +958,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/tree/master/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -524,8 +974,8 @@
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tree/master/tags">
-                <span class="site-state-item-count">6</span>
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -562,7 +1012,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
