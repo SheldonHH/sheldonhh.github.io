@@ -333,7 +333,11 @@
 <li>给自己定个<strong>“最后期限”</strong>，比如一小时之内一定做到把这些命令谙熟于心…… <strong>绝对不能“过些天就想不起来了”</strong>，否则，那就是思考监管的“只因为学习习惯不好造成的永久性愚蠢”。</li>
 </ol>
 <p><a href="https://www.youtube.com/watch?v=KUWn_TJTrnU" target="_blank" rel="external">https://www.youtube.com/watch?v=KUWn_TJTrnU</a></p>
+<p><img src="https://pbs.twimg.com/media/DESIOIZUMAEbvUy.jpg" alt=""></p>
 <p><img src="https://pbs.twimg.com/media/DESFnT0V0AEFXIb.jpg" alt=""></p>
+<p><img src="https://pbs.twimg.com/media/DESHl1TUQAAuI1e.jpg" alt=""></p>
+<p><img src="https://pbs.twimg.com/media/DESHvL5UMAI34jh.jpg" alt=""></p>
+<p><img src="https://pbs.twimg.com/media/DESIEpfUQAAkl4G.jpg" alt=""></p>
 
           
         
@@ -1103,107 +1107,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/03/约/图/Topological Order/" itemprop="url">
-                  Topological Order Direct Acyclic Order
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>All Edges point forward</strong></p>
-<p><strong>Any DAGs contains one Topological ordering</strong> </p>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><ul>
-<li>Course schedule that satisfies the prerequisite requirements</li>
-<li>Scheduling tasks such that when a task is ready to execute, all the tasks it depends on <strong>must have</strong> already completed </li>
-<li>Finding a chain of cause and effect that may lead to a particular event</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DirectedGraphNode</span></span>&#123;</div><div class="line">   <span class="keyword">int</span> label;</div><div class="line">   ArrayList&lt;DirectedGraphNode&gt; neighbors;</div><div class="line">   DirectedGraphNode(<span class="keyword">int</span> x)&#123;</div><div class="line">   		label = x;</div><div class="line">     	neighbors =<span class="keyword">new</span> Arraylist&lt;DirectedGraphNode&gt;();</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</div><div class="line">  	<span class="function"><span class="keyword">public</span> ArrayList&lt;DirectedGraphNode&gt; <span class="title">topSort</span><span class="params">(ArrayList&lt;DirectedGraphNode&gt; graph)</span></span>&#123;</div><div class="line">      ArrayList&lt;DirectedGraphNode&gt; result = <span class="keyword">new</span> ArrayList&lt;DirectedGraphNode&gt;();</div><div class="line">      HashMap&lt;DirectedGraphNode, Integer&gt; map = <span class="keyword">new</span> HashMap();</div><div class="line">      <span class="keyword">for</span>(DirectedGraphNode node: graph)&#123;</div><div class="line">        	<span class="keyword">for</span>(DirectedGraphNode neighbor: node.neighbors)&#123;</div><div class="line">              		<span class="keyword">if</span>(map.containsKey(neighbor))&#123;</div><div class="line">                      		map.put(neighbor, map.get(neighbor)+<span class="number">1</span>);</div><div class="line">              		&#125;<span class="keyword">else</span>&#123;</div><div class="line">                      		map.put(neighbor, <span class="number">1</span>);</div><div class="line">              		&#125;</div><div class="line">        	&#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      Queue&lt;DirectedGraphNode&gt; q = <span class="keyword">new</span> LinkedList&lt;DirectedGraphNode&gt;();</div><div class="line">      <span class="keyword">for</span> (DirectedGraphNode node : graph) &#123;</div><div class="line">        <span class="keyword">if</span> (!map.containsKey(node)) &#123;</div><div class="line">          q.offer(node);</div><div class="line">          result.add(node);</div><div class="line">      <span class="comment">// to find the starting node</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      <span class="keyword">while</span> (!q.isEmpty()) &#123;</div><div class="line">          DirectedGraphNode node = q.poll();</div><div class="line">          <span class="keyword">for</span> (DirectedGraphNode n : node.neighbors) &#123;</div><div class="line">              map.put(n, map.get(n) - <span class="number">1</span>);</div><div class="line">              <span class="keyword">if</span> (map.get(n) == <span class="number">0</span>) &#123;</div><div class="line">                  result.add(n);</div><div class="line">                  q.offer(n);</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/10/03/笑来详解/深入理解笑来博客/" itemprop="url">
                   深入理解笑来博客
                 </a>
@@ -1263,6 +1166,107 @@
 <h5 id="延伸"><a href="#延伸" class="headerlink" title="延伸:"></a>延伸:</h5><p>Ubuntu: apt-get</p>
 <p>高级包装工具（英语：Advanced Packaging Tools,简称：APT）是Debian及其衍生发行版（如：ubuntu）的软件包管理器。APT可以自动下载，配置，安装二进制或者源代码格式的软 件包，apt-get命令一般需要root权限执行 sudo命令</p>
 <p><img src="https://pbs.twimg.com/media/DCfkYqeUIAEa-bF.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/03/约/图/Topological Order/" itemprop="url">
+                  Topological Order Direct Acyclic Order
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
+              2016-10-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>All Edges point forward</strong></p>
+<p><strong>Any DAGs contains one Topological ordering</strong> </p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><ul>
+<li>Course schedule that satisfies the prerequisite requirements</li>
+<li>Scheduling tasks such that when a task is ready to execute, all the tasks it depends on <strong>must have</strong> already completed </li>
+<li>Finding a chain of cause and effect that may lead to a particular event</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DirectedGraphNode</span></span>&#123;</div><div class="line">   <span class="keyword">int</span> label;</div><div class="line">   ArrayList&lt;DirectedGraphNode&gt; neighbors;</div><div class="line">   DirectedGraphNode(<span class="keyword">int</span> x)&#123;</div><div class="line">   		label = x;</div><div class="line">     	neighbors =<span class="keyword">new</span> Arraylist&lt;DirectedGraphNode&gt;();</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</div><div class="line">  	<span class="function"><span class="keyword">public</span> ArrayList&lt;DirectedGraphNode&gt; <span class="title">topSort</span><span class="params">(ArrayList&lt;DirectedGraphNode&gt; graph)</span></span>&#123;</div><div class="line">      ArrayList&lt;DirectedGraphNode&gt; result = <span class="keyword">new</span> ArrayList&lt;DirectedGraphNode&gt;();</div><div class="line">      HashMap&lt;DirectedGraphNode, Integer&gt; map = <span class="keyword">new</span> HashMap();</div><div class="line">      <span class="keyword">for</span>(DirectedGraphNode node: graph)&#123;</div><div class="line">        	<span class="keyword">for</span>(DirectedGraphNode neighbor: node.neighbors)&#123;</div><div class="line">              		<span class="keyword">if</span>(map.containsKey(neighbor))&#123;</div><div class="line">                      		map.put(neighbor, map.get(neighbor)+<span class="number">1</span>);</div><div class="line">              		&#125;<span class="keyword">else</span>&#123;</div><div class="line">                      		map.put(neighbor, <span class="number">1</span>);</div><div class="line">              		&#125;</div><div class="line">        	&#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      Queue&lt;DirectedGraphNode&gt; q = <span class="keyword">new</span> LinkedList&lt;DirectedGraphNode&gt;();</div><div class="line">      <span class="keyword">for</span> (DirectedGraphNode node : graph) &#123;</div><div class="line">        <span class="keyword">if</span> (!map.containsKey(node)) &#123;</div><div class="line">          q.offer(node);</div><div class="line">          result.add(node);</div><div class="line">      <span class="comment">// to find the starting node</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      <span class="keyword">while</span> (!q.isEmpty()) &#123;</div><div class="line">          DirectedGraphNode node = q.poll();</div><div class="line">          <span class="keyword">for</span> (DirectedGraphNode n : node.neighbors) &#123;</div><div class="line">              map.put(n, map.get(n) - <span class="number">1</span>);</div><div class="line">              <span class="keyword">if</span> (map.get(n) == <span class="number">0</span>) &#123;</div><div class="line">                  result.add(n);</div><div class="line">                  q.offer(n);</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
