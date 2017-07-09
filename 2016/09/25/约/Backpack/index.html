@@ -1,0 +1,691 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Uncompleted,Tech," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Backpack series and Dynamics Programming">
+<meta property="og:url" content="http://xipingsg.github.io/2016/09/25/约/Backpack/index.html">
+<meta property="og:site_name" content="Sheldon Huang">
+<meta property="og:description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
+<meta property="og:updated_time" content="2016-09-28T13:16:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Backpack series and Dynamics Programming">
+<meta name="twitter:description" content="Get down stairsThere are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  
+123456789101112131415f(10) = f(8) + f(7)f(0) = 1; // do nothing is al">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://xipingsg.github.io/2016/09/25/约/Backpack/"/>
+
+  <title> Backpack series and Dynamics Programming | Sheldon Huang </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84675629-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sheldon Huang</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://xipingsg.github.io" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/tree/master/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://about.me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/tree/master/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Backpack series and Dynamics Programming
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T21:15:48+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">alog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Get-down-stairs"><a href="#Get-down-stairs" class="headerlink" title="Get down stairs"></a>Get down stairs</h2><p>There are 10 stairs, every times you can only walk 2 or 3 stairs. How many ways to exactly reach the 10th stairs.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">f(<span class="number">10</span>) = f(<span class="number">8</span>) + f(<span class="number">7</span>)</div><div class="line">f(<span class="number">0</span>) = <span class="number">1</span>; <span class="comment">// do nothing is also an option to reach here</span></div><div class="line">f(<span class="number">2</span>) = f(<span class="number">0</span>) + f(-<span class="number">1</span>);<span class="comment">//Jump from -1 level which is zero or jump </span></div><div class="line">f(<span class="number">2</span>) = f(<span class="number">0</span>) + <span class="number">0</span>;</div><div class="line"></div><div class="line">f(<span class="number">1</span>) = <span class="number">0</span>; <span class="comment">// There is no way to jump to 1 level</span></div><div class="line">f(<span class="number">3</span>) = f(<span class="number">1</span>) + f(<span class="number">0</span>) = <span class="number">0</span> + <span class="number">1</span> = <span class="number">1</span></div><div class="line">f(<span class="number">4</span>) = f(<span class="number">2</span>) + f(<span class="number">1</span>) = <span class="number">1</span> + <span class="number">0</span> = <span class="number">1</span></div><div class="line">f(<span class="number">5</span>) = f(<span class="number">3</span>) + f(<span class="number">2</span>) = <span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span></div><div class="line"> ....</div><div class="line">f(<span class="number">10</span>) = f(<span class="number">8</span>) + f(<span class="number">7</span>) = <span class="number">7</span></div><div class="line">  </div><div class="line">  <span class="function">Complexity <span class="title">O</span><span class="params">(n)</span>: recursion</span></div><div class="line"><span class="title">f</span><span class="params">(<span class="number">6</span>)</span> can both jump to <span class="title">f</span><span class="params">(<span class="number">8</span>)</span> and <span class="title">f</span><span class="params">(<span class="number">9</span>)</span><span class="comment">// reverse thinking</span></div></pre></td></tr></table></figure>
+<p>10 floor, you can step up 2 or 3, how many ways to arrive the 10th from 0th</p>
+<h4 id="Backpack-Issue-1"><a href="#Backpack-Issue-1" class="headerlink" title="Backpack Issue 1:"></a>Backpack Issue 1:</h4><p>n items, every items volume is (Integer) A[i] (1 &lt;= i &lt;=n) sorted?, every backpack’s volumn is integer m. What is the <strong>maximum</strong> volume of items can the backpack hold?</p>
+<p><u>sample inputs: n = 4  A=[2,3,5,7]  m=11</u></p>
+<blockquote>
+<p>brutal-force</p>
+</blockquote>
+<p>n steps, every step have two options . 50 items 2^50</p>
+<p>Thinking:</p>
+<blockquote>
+<p>whether to put the last item (to put 7)?</p>
+<p>if put the question become that to obtain the max volume of remaining for a backpack of 11- 7 = 4</p>
+<p>else, it become that to obain max volume of remaining for a backpack of 11</p>
+</blockquote>
+<p>So in math, we represent like f(4，11) = max(f(3，11),f(3，4)+7)</p>
+<p><code>f(i，j) = max(f(i-1，j-A[i])+A[i]， f(i-1，j))</code></p>
+<blockquote>
+<p><strong>f(0) Puzzle</strong></p>
+<p>For all <strong>DP</strong> problem, <strong>do not</strong> start from zero. put f(0,j) as an <strong>Initialization</strong> </p>
+</blockquote>
+<p>the first parameter always be i - 1, because no matter u put or not always need to exclude the last element</p>
+<p>f(i) only has the relationship of f(i - 1), so</p>
+<p>f(1) f(0)</p>
+<p>f(2) f(1)</p>
+<p>…….</p>
+<p>The range, 1 &lt;= i &lt;= n; 0 &lt;= j &lt;= m</p>
+<p>The Time Complexity O(M*N): n = A.length ; m= size of the backpack</p>
+<p><strong>Initialization:</strong></p>
+<p>f(0,0) = 0;  f(0,1) = 0;……… f(0,m) = 0; </p>
+<p>0 item put in 0 volume backpack; 0 item put in 1 volume backpack; 0 item put in 2 volume backpack ……</p>
+<h2 id="Backpack-Issue-2-add-Value"><a href="#Backpack-Issue-2-add-Value" class="headerlink" title="Backpack Issue 2 add Value"></a>Backpack Issue 2 add Value</h2><p>n items, every items volume is (Integer) A[i] (1 &lt;= i &lt;=n) sorted?, <strong>every volume is (integer) V[i] (0&lt;=i&lt;=n).</strong> The backpack’s volumn is a constant integer m. What is the <strong>maximum</strong> volume of items can the backpack hold?</p>
+<p>n element, the volume of every element is A[i] (1 &lt;= i &lt;=n ), </p>
+<p>Value is V[i] (1 &lt;= i &lt;n). The volume of one backpack is m. How much value will the backpack contains？</p>
+<blockquote>
+<p>Sample input: n = 4，A=[2,3,5,7]，V=[1,5,2,4]，m=11</p>
+</blockquote>
+<p><strong>Thinking:</strong></p>
+<blockquote>
+<p>whether to put the last item (to put 7)?</p>
+<p>if put the question become that to obtain the max volume of remaining for a backpack of 11- 7 = 4</p>
+<p>else, it become that to obain max volume of remaining for a backpack of 11</p>
+</blockquote>
+<p>So in math, we represent like f(4，11) = max(f(3，11)，f(3，11-4)+<strong>4</strong>)</p>
+<p>f(i，j) = max（f(i-1，j - A[i]) + <strong>V[i]</strong>， f(i - 1，j)）</p>
+<p>No Need to sorted </p>
+<h2 id="Backpack-Issue-3-Unlimited-number-of-items"><a href="#Backpack-Issue-3-Unlimited-number-of-items" class="headerlink" title="Backpack Issue 3 Unlimited number of items"></a>Backpack Issue 3 Unlimited number of items</h2><p>n items, every items volume is (Integer) A[i] (1 &lt;= i &lt;=n) sorted?, <strong>every volume is (integer) V[i] (0&lt;=i&lt;=n).</strong> The backpack’s volumn is a constant integer m. What is the <strong>maximum</strong> volume of items can the backpack hold?</p>
+<p>So in math, we represent like f(4，11) = max(f(3，11)，f(3，11- <strong>k*</strong>7)+<strong>k*4</strong>)</p>
+<p>f(i，j) = max（f(i-1，j - <strong>k*</strong>A[i]) + <strong>k*V[i]</strong>， f(i - 1，j)）</p>
+<p><strong>1&lt;=k&lt;=11/7，k is integer</strong> </p>
+<p><strong>1&lt;=k&lt;=n/m</strong></p>
+<p><strong>1&lt;=i&lt;=n，0&lt;=j&lt;=m</strong></p>
+<p>虽然表单的Row 和 Column 都是从0开始的，但是因为不同num of element 在公式中不论最后一个放不放都是从i - 1 中开始的。所以用 i &gt;= 1</p>
+<p><strong>TLE Shit</strong></p>
+<p><strong>O(NM^2)</strong></p>
+<p><u><strong>Lower Complexity and Higher Efficiency</strong></u></p>
+<p>f(4,11) = max(f(3,11) , f(<strong>4</strong>, 11 - 7)+4）    // 同行而不上一个顶头、左上方的</p>
+<p>f(i，j) = max(f(i - 1, j)，f( <strong>i</strong>，j - A[i]) + V[i])  //范围： 1&lt;=i&lt;= n;  0&lt;=j&lt;=m</p>
+<p><strong>TLE Shit</strong></p>
+<p><strong>O(NM^2)</strong></p>
+<p>放了这个物品还有这个物品。</p>
+<h2 id="Backpack-Issue-4-how-many-ways-in-total"><a href="#Backpack-Issue-4-how-many-ways-in-total" class="headerlink" title="Backpack Issue 4 how many ways in total"></a>Backpack Issue 4 how many ways in total</h2><p><strong>Initialization</strong> f(0，0) = 1，f(0，1) = 1，f(0，2) = 0.。。。。。f(0，m) = 0</p>
+<p><strong>Complexity</strong> O(NM)</p>
+<p><strong>Sample Formula:</strong> f(4，11) = f(3，11) <strong>+</strong> f(3，11 - 7) // instead of <strong>max</strong></p>
+<p>​                        //put，       not put </p>
+<p><strong>Pseudocode Formula:</strong>  f(i，j) = f(i - 1，j - A[i]) <strong>+</strong> f(i - 1，j)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Uncompleted/" rel="tag">#Uncompleted</a>
+          
+            <a href="/tags/Tech/" rel="tag">#Tech</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/25/Big Data/Learn Hadoop/" rel="next" title="Hadoop Fly">
+                <i class="fa fa-chevron-left"></i> Hadoop Fly
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/28/Linux/Terminal Basic/" rel="prev" title="String to String Array Palindrome">
+                String to String Array Palindrome <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://developer.github.com/assets/images/electrocat.png"
+               alt="Serendipity" />
+          <p class="site-author-name" itemprop="name">Serendipity</p>
+          <p class="site-description motion-element" itemprop="description">Ever-growing brain</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/tree/master/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/tree/master/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-down-stairs"><span class="nav-number">1.</span> <span class="nav-text">Get down stairs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Backpack-Issue-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">Backpack Issue 1:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-2-add-Value"><span class="nav-number">2.</span> <span class="nav-text">Backpack Issue 2 add Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-3-Unlimited-number-of-items"><span class="nav-number">3.</span> <span class="nav-text">Backpack Issue 3 Unlimited number of items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpack-Issue-4-how-many-ways-in-total"><span class="nav-number">4.</span> <span class="nav-text">Backpack Issue 4 how many ways in total</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Serendipity</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
