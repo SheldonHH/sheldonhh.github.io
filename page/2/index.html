@@ -267,6 +267,160 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/28/Linux/messy/" itemprop="url">
+                  messy stuff
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-28T18:12:09+08:00" content="2016-09-28">
+              2016-09-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">operating system</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">touch tmp</div><div class="line"></div><div class="line"></div><div class="line">rm -r <span class="comment">// recursively remove </span></div><div class="line"></div><div class="line">touch run.py</div><div class="line"></div><div class="line">cp run1.py run2.py</div><div class="line"></div><div class="line">mv run1.py /tmp</div><div class="line"></div><div class="line">mv run1.py run2.py <span class="comment">// rename run1.py to run2.py</span></div></pre></td></tr></table></figure>
+<p><strong>cat</strong></p>
+<p><code>cat run.py</code> // show the content of the run.py file</p>
+<p><code>echo &quot;123&quot; &gt; run3.py</code></p>
+<p> <code>cat run.py &gt; run2.py</code></p>
+<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p><strong>grep:</strong></p>
+<ul>
+<li><p>search the file cotent</p>
+</li>
+<li><p>search previous commands</p>
+<p><code>cat run.py | grep run.py</code></p>
+</li>
+</ul>
+<p><strong>ifconfig:</strong> show the <em>ethernet card</em> info</p>
+<p>eg：<code>ifconfig | grep inet | grep broadcast:  obtain ip</code></p>
+<p>the one end with 1</p>
+<p><img src="https://pbs.twimg.com/media/CtcAmn3UkAAdjH6.jpg" alt=""></p>
+<p><strong>ps:</strong> check the current process</p>
+<p><code>ps -a | 477</code></p>
+<p><strong>shell</strong></p>
+<p>cannot execute <code>./demo.sh</code> directly </p>
+<p>need to chmod x+  </p>
+<h3 id="Communicate-with-server"><a href="#Communicate-with-server" class="headerlink" title="Communicate with server"></a>Communicate with server</h3><p><strong>wget</strong></p>
+<p><strong>scp</strong></p>
+<ul>
+<li><p><strong>download the file:</strong> scp user@ip: server_path local_path</p>
+<ul>
+<li><p>eg: <code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code> // normally the port number is 22, but it is configurable</p>
+</li>
+<li><p><code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p><strong>download directory:</strong>  scp -r user@ip: server_path local_path </p>
+<ul>
+<li>eg: <code>scp -r -p22 root@192.168. 31.193:~/tmp ~/</code>  <strong>copy the directory to the server</strong></li>
+</ul>
+</li>
+<li><p><strong>Upload file:</strong> scp <strong>local_path</strong> user@ip:<strong>server_path</strong></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/28/Linux/Ubuntu常用 apt-get/" itemprop="url">
                   Ubuntu常用 apt-get
                 </a>
@@ -923,8 +1077,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/我C++/How to exit nested for loop/" itemprop="url">
-                  Untitled
+                <a class="post-title-link" href="/2016/09/23/Why Hexo/" itemprop="url">
+                  Why Hexo
                 </a>
               
             
@@ -967,11 +1121,17 @@
       
         
           
-            <p>在做2017 的  Google C轮 中，</p>
-<p>break是没有办法跳出外面的for loop就会打来问题，goto又有更各种问题</p>
-<p><img src="https://pbs.twimg.com/media/DENImimUAAEMO2k.jpg" alt=""></p>
-<p>在两个for里面的condition中加入判断条件就好了</p>
-<p><img src="https://pbs.twimg.com/media/DENJcnLU0AAUB0L.jpg" alt=""></p>
+            <h3 id="Why-Hexo"><a href="#Why-Hexo" class="headerlink" title="Why Hexo?"></a>Why Hexo?</h3><p>There are some static blog framework like Jekyll, Hexo</p>
+<ol>
+<li>Jerky is based on Ruby, hence you need the Ruby environment.</li>
+<li>Hero is base on NodeJS which has less bug and hard-fork</li>
+<li>The preview session in Jekyll is primitive, you can go <code>localhost:4000</code> </li>
+<li>Hexo has more themes than Jekyll</li>
+<li>Sir Xiaolai use Hexo</li>
+</ol>
+<p><a href="https://hexo.io/zh-cn/docs/front-matter.html#" target="_blank" rel="external">https://hexo.io/zh-cn/docs/front-matter.html#</a></p>
+<p><a href="https://hexo.io/docs/troubleshooting.html#Error-with-DTrace-Mac-OS-X" target="_blank" rel="external">Error on DTrace</a></p>
+<p>New shortcut</p>
 
           
         
@@ -1021,8 +1181,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/Hexo Create Tags/" itemprop="url">
-                  Hexo Create Tags
+                <a class="post-title-link" href="/2016/09/23/我C++/How to exit nested for loop/" itemprop="url">
+                  Untitled
                 </a>
               
             
@@ -1065,27 +1225,11 @@
       
         
           
-            <p>Terminal 进入yourname.github.io folder之后</p>
-<ol>
-<li>新建一个page，在/source/里面显示为一个新的文件夹tags</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
-<p><img src="https://pbs.twimg.com/media/DCdbzbmU0AEUfQN.jpg" alt=""></p>
-<ol>
-<li><p>打开tags文件夹中的index.md</p>
-<p><img src="https://pbs.twimg.com/media/DCdcOgOUIAALcYc.jpg" alt=""></p>
-</li>
-</ol>
-<p><img src="https://pbs.twimg.com/media/DCdcpBJUwAAzNA8.jpg" alt=""></p>
-<ol>
-<li>在菜单中添加链接。编辑 <strong>主题配置文件</strong> ，添加 tags 到 menu 中，如下:</li>
-</ol>
-<p>yourname.github.io/themes/next/_config.yml</p>
-<p>另外一个同名文件位于yourname.github.io/_config.yml的</p>
-<p><strong>不要找错</strong></p>
-<p><img src="https://pbs.twimg.com/media/DCdfIIKV0AAVrkS.jpg" alt=""></p>
-<p>/tags 是根据source里面的顺序排列</p>
-<p><img src="https://pbs.twimg.com/media/DCde4ywUQAImMvS.jpg" alt=""></p>
+            <p>在做2017 的  Google C轮 中，</p>
+<p>break是没有办法跳出外面的for loop就会打来问题，goto又有更各种问题</p>
+<p><img src="https://pbs.twimg.com/media/DENImimUAAEMO2k.jpg" alt=""></p>
+<p>在两个for里面的condition中加入判断条件就好了</p>
+<p><img src="https://pbs.twimg.com/media/DENJcnLU0AAUB0L.jpg" alt=""></p>
 
           
         
@@ -1251,8 +1395,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/Why Hexo/" itemprop="url">
-                  Why Hexo
+                <a class="post-title-link" href="/2016/09/23/Hexo Create Tags/" itemprop="url">
+                  Hexo Create Tags
                 </a>
               
             
@@ -1295,17 +1439,27 @@
       
         
           
-            <h3 id="Why-Hexo"><a href="#Why-Hexo" class="headerlink" title="Why Hexo?"></a>Why Hexo?</h3><p>There are some static blog framework like Jekyll, Hexo</p>
+            <p>Terminal 进入yourname.github.io folder之后</p>
 <ol>
-<li>Jerky is based on Ruby, hence you need the Ruby environment.</li>
-<li>Hero is base on NodeJS which has less bug and hard-fork</li>
-<li>The preview session in Jekyll is primitive, you can go <code>localhost:4000</code> </li>
-<li>Hexo has more themes than Jekyll</li>
-<li>Sir Xiaolai use Hexo</li>
+<li>新建一个page，在/source/里面显示为一个新的文件夹tags</li>
 </ol>
-<p><a href="https://hexo.io/zh-cn/docs/front-matter.html#" target="_blank" rel="external">https://hexo.io/zh-cn/docs/front-matter.html#</a></p>
-<p><a href="https://hexo.io/docs/troubleshooting.html#Error-with-DTrace-Mac-OS-X" target="_blank" rel="external">Error on DTrace</a></p>
-<p>New shortcut</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
+<p><img src="https://pbs.twimg.com/media/DCdbzbmU0AEUfQN.jpg" alt=""></p>
+<ol>
+<li><p>打开tags文件夹中的index.md</p>
+<p><img src="https://pbs.twimg.com/media/DCdcOgOUIAALcYc.jpg" alt=""></p>
+</li>
+</ol>
+<p><img src="https://pbs.twimg.com/media/DCdcpBJUwAAzNA8.jpg" alt=""></p>
+<ol>
+<li>在菜单中添加链接。编辑 <strong>主题配置文件</strong> ，添加 tags 到 menu 中，如下:</li>
+</ol>
+<p>yourname.github.io/themes/next/_config.yml</p>
+<p>另外一个同名文件位于yourname.github.io/_config.yml的</p>
+<p><strong>不要找错</strong></p>
+<p><img src="https://pbs.twimg.com/media/DCdfIIKV0AAVrkS.jpg" alt=""></p>
+<p>/tags 是根据source里面的顺序排列</p>
+<p><img src="https://pbs.twimg.com/media/DCde4ywUQAImMvS.jpg" alt=""></p>
 
           
         
@@ -1379,7 +1533,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/tree/master/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
