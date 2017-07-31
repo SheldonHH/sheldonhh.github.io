@@ -267,8 +267,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/09/笑来详解/Love what you do/" itemprop="url">
-                  Love what you do
+                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
+                  Zero to One
                 </a>
               
             
@@ -281,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-09T14:03:14+08:00" content="2017-07-09">
-              2017-07-09
+            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
+              2016-10-03
             </time>
           </span>
 
@@ -311,431 +311,7 @@
       
         
           
-            <h3 id="1-Trump"><a href="#1-Trump" class="headerlink" title="1. Trump"></a>1. Trump</h3><p>Donald Trump在2016年3月在Wisconsin Janesville的竞选rally，激励年轻人成功提到了三点</p>
-<p><img src="https://pbs.twimg.com/media/DERaBjoV0AAp1Iz.jpg" alt=""></p>
-<ol>
-<li>Love what you do</li>
-<li>Keep Momentum</li>
-<li>Work Really Hard</li>
-</ol>
-<h2 id="2-笑来"><a href="#2-笑来" class="headerlink" title="2. 笑来"></a>2. 笑来</h2><p>笑来老师在2017年3月23日的得到直播的《普通人如何实现财务自由》同样</p>
-<p><img src="https://pbs.twimg.com/media/DERelM-VYAAZ3sP.jpg" alt=""></p>
-<p>提到了</p>
-<ol>
-<li><strong>干一行爱一行</strong></li>
-<li><strong>要坚信自己一定能够成功</strong></li>
-</ol>
-<h3 id="3-环境的重要性："><a href="#3-环境的重要性：" class="headerlink" title="3. 环境的重要性："></a>3. 环境的重要性：</h3><p>然而，在一个恰当的环境里，在一个恰当的社交圈里，情况可能非常不同<strong>。若是你在一个表现型人格占大多数的圈子里生存，你做得好会招致嫉妒甚至陷害，你做得差会被嘲弄甚至捉弄；反过来，你若是在一个进去型人格占大多数的圈子里生存，情况会反过来，你做得好，大家会佩服你，然后模仿你，向你学习，或直接向你请教，或默默揣摩；要是你做的不好，没有人会鄙视你，没有人会捉弄你，相反会鼓励你，告诉你说大家刚开始都是这样</strong>的，看到你做的不恰当的地方，他们会告诉你，若是如此这般你也许就可能好起来…… 然而，即便是在<strong>进取型人格占大多数的社交圈里，一切的改变也都来自于自己的刻意练习</strong>，用时间浇灌的践行，才能引发真正的改变与进步。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/14/安全/SELinux week3/" itemprop="url">
-                  SELinux
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T13:22:33+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="DAC-issues"><a href="#DAC-issues" class="headerlink" title="DAC issues:"></a>DAC issues:</h4><ol>
-<li>too coarse-grained and over-privileged</li>
-<li>Completely trusted, Completed untrusted</li>
-</ol>
-<h4 id="Advantages-of-MAC"><a href="#Advantages-of-MAC" class="headerlink" title="Advantages of MAC"></a>Advantages of MAC</h4><ul>
-<li>MAC: SELinux enforces an administratively-defined security policy over all processes and objects in system</li>
-<li>protect against </li>
-</ul>
-<h4 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h4><p>general architecture for MAC</p>
-<ul>
-<li>flexible support for MAC policies</li>
-<li>SELinux is an application of the Flask architecture in the Linus operating system</li>
-</ul>
-<h2 id="A3-2-Architecutre"><a href="#A3-2-Architecutre" class="headerlink" title="A3.2 Architecutre"></a>A3.2 Architecutre</h2><p>Flask concepts:</p>
-<ul>
-<li>Subject: process</li>
-<li>Object: file scocket, IPC object</li>
-<li>Security contextL a collection of security attributes assigned to a subject or object</li>
-<li>Security identifiers(SID) map to <u>security contexts</u><ul>
-<li>User space SIDs are maintained by user space access vector cache(AVC) in libselinx</li>
-</ul>
-</li>
-</ul>
-<h4 id="Security-Decsion"><a href="#Security-Decsion" class="headerlink" title="Security Decsion"></a>Security Decsion</h4><p>made by the security server based on a pair of SIDs and an object security class </p>
-<ul>
-<li><strong>Object security class:</strong> type of objects(e.g.: process, file, directory, TCP socket)</li>
-<li><strong>Libeling decision:</strong> transition decisions: specify default security attributes for anew subject / object</li>
-<li><strong>Access decisions:</strong> specify whether or not a permission is granted for a given pair of SIDs and class<ul>
-<li>AVC maintains allowed access vector(decisions for all the permissions defined for an object)</li>
-<li>Auditing vectors: <u>auditallow</u> and <u>auditdeny</u></li>
-</ul>
-</li>
-</ul>
-<h4 id="Flask-Defintion"><a href="#Flask-Defintion" class="headerlink" title="Flask Defintion"></a>Flask Defintion</h4><ul>
-<li>Configuration files define<ul>
-<li>Flask security classes: security_class</li>
-<li>Initial SIDs: initial_sids</li>
-<li>Access vector permissions: access_vectors</li>
-<li>This files are shared between SELinus kernel and example policy configuration</li>
-<li>Source of the files: policy / flask</li>
-<li>Installed files when policy confiugration is compiled</li>
-</ul>
-</li>
-</ul>
-<h2 id="A3-3-Security-Model"><a href="#A3-3-Security-Model" class="headerlink" title="A3.3: Security Model"></a>A3.3: Security Model</h2><ol>
-<li>A combination of <u><em>Type Enforcement(TE)</em></u> and <u><em>Identity-Based  Access Control(IBAC)</em>,  <em>RBAC</em>,</u> and <u><em>optional MLS</em></u><ol>
-<li>TE provides fine-grained control over processes and objects</li>
-<li>RBAC provides a high level of abstraction to simplify user management</li>
-</ol>
-</li>
-</ol>
-<h4 id="Traditional-TE"><a href="#Traditional-TE" class="headerlink" title="Traditional TE"></a>Traditional TE</h4><ul>
-<li>Domain →  process</li>
-<li>Type →  object</li>
-<li>A pair of access matrices<ul>
-<li>How domains can access types </li>
-<li>How domains can interact with other domains</li>
-<li>What types of program can be executed to enter a domain</li>
-<li>A domain → an entrypoint program and / or shared libraries</li>
-</ul>
-</li>
-<li>Each user is authorized to operate in certain domains<ul>
-<li>(e.g. untrusted_app)</li>
-</ul>
-</li>
-</ul>
-<h4 id="SELinux-TE"><a href="#SELinux-TE" class="headerlink" title="SELinux TE"></a>SELinux TE</h4><ul>
-<li>A single type attribute in the security context for both processes and objects<ul>
-<li>A <strong>single type</strong> can be used both as the <u><strong>domain of a process</strong></u> and as the <u><strong>type of a related object</strong></u>(e.g. /proc/PID entires for a process)</li>
-<li>A <strong>single matrix</strong> specify can acess or interact with other types in terms of permisssion defined in the Flask architecture</li>
-</ul>
-</li>
-<li>Access Decision is based on <ul>
-<li>A type pair and security class</li>
-<li>Objects of the smae type but different classes may be treated differently(TCP sokcet and IP socket)</li>
-</ul>
-</li>
-<li>SELinux TE<ul>
-<li>doesnot associate users with domains<ul>
-<li>RBAC is used to provided additional layer between users and domains</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h6 id="TE-transition-Rules-for-process-specifies-the-new-domain-based-on-the-current-domain-of-the-process-and-the-type-of-the-program-For-object-specifies-the-new-type-based-on-the-domain-of-the-creating-process-the-type-of-the-related-object-and-the-object-security-class"><a href="#TE-transition-Rules-for-process-specifies-the-new-domain-based-on-the-current-domain-of-the-process-and-the-type-of-the-program-For-object-specifies-the-new-type-based-on-the-domain-of-the-creating-process-the-type-of-the-related-object-and-the-object-security-class" class="headerlink" title="### TE transition Rules,,- for process,  - specifies the new domain based on the current domain of the process  and the type of the program,- For object,  - specifies the new type based on the domain of the creating process, the type of the related object and the object security class"></a>### TE transition Rules,,- for process,  - specifies the new domain based on the current domain of the process  and the type of the program,- For object,  - specifies the new type based on <em><u>the domain of the creating process</u></em>, the <u><em>type of the related objec</em>t</u> and the <u><em>object security class</em></u></h6></li>
-</ul>
-<h2 id="TE-Access-Vector-Rule"><a href="#TE-Access-Vector-Rule" class="headerlink" title="TE Access Vector Rule"></a>TE Access Vector Rule</h2><ul>
-<li>The TE access matrix = a collection of access(access vector rule policy)</li>
-<li>specifies an access vector for a <u><em>collection of type p</em>airs</u> and <u><em>object security classes</em></u></li>
-<li>Kinds of access vector: <em>allow</em>, <em>auditallow</em>, <em>auditdeny</em></li>
-<li>Default behavior if no matching rule<ul>
-<li><strong>Closed policy</strong>: permissions are <em>denied</em> unless there is an explicit allow rule</li>
-<li>No permissions are audited unless there is an explicit audit allow rule</li>
-<li>Permissions are always audited when denied unless there is an explicit dont audit rule</li>
-</ul>
-</li>
-</ul>
-<h2 id="RBAC-Model"><a href="#RBAC-Model" class="headerlink" title="RBAC Model"></a>RBAC Model</h2><h5 id="SELinux-RBAC"><a href="#SELinux-RBAC" class="headerlink" title="SELinux RBAC"></a>SELinux RBAC</h5><ul>
-<li>Authorizes each user for a set of roles</li>
-<li>Authorizes each role for a set of TE domains</li>
-<li>A role domain relationship can be specified to define a hierarchy among roles</li>
-<li>Permissions are assigned according to TE configuration</li>
-</ul>
-<h5 id="Role-attribute-in-security-context"><a href="#Role-attribute-in-security-context" class="headerlink" title="Role attribute in security context"></a>Role attribute in security context</h5><ul>
-<li>A role attribute is maintained for each process</li>
-<li>The role attribute for an object is object_r but unused</li>
-<li><u>RBAC configuration</u> specifies authorized transitions <strong><em>between roles based on the pair of roles</em></strong> which are limited to certain TE domains in policy</li>
-</ul>
-<h3 id="User-Identity-Model"><a href="#User-Identity-Model" class="headerlink" title="User Identity Model"></a>User Identity Model</h3><ul>
-<li>Linux uids are often changed <ul>
-<li>via the setuid calls</li>
-<li>By the superuser processes</li>
-</ul>
-</li>
-<li>SELinux maintains a user identity atttribute in security context<ul>
-<li>Independent of Linux user identity attributes</li>
-<li>Can changed by certain TE domains only (e.g. login program)</li>
-</ul>
-</li>
-</ul>
-<h3 id="A-3-4-1-Policy-Languages"><a href="#A-3-4-1-Policy-Languages" class="headerlink" title="A.3.4.1 Policy Languages"></a>A.3.4.1 Policy Languages</h3><p>policy -&gt; flask te_rbac users opt_constraints contexts</p>
-<h3 id="A3-4-1-Syntax-of-TE-and-RBAC-Configuration"><a href="#A3-4-1-Syntax-of-TE-and-RBAC-Configuration" class="headerlink" title="A3.4.1 Syntax of TE and RBAC Configuration"></a>A3.4.1 Syntax of TE and RBAC Configuration</h3><ul>
-<li>te_rbac -&gt; te_rbac_statement | te_rbac_statement (| means or)</li>
-<li>te_rbac_statement -&gt; te_statement | rbac_statement</li>
-<li>te_statement -&gt; attrib_decl | type_decl | type_transition_rule | type_change_rule | te_av_rule | te_assertion</li>
-<li>rbac_statement -&gt; role_decl | role_dominance | role_allow_rule</li>
-</ul>
-<h3 id="A3-4-2-TE-Statements"><a href="#A3-4-2-TE-Statements" class="headerlink" title="A3.4.2 TE Statements"></a>A3.4.2 TE Statements</h3><ul>
-<li>te_rbac_statement -&gt; te_statment</li>
-</ul>
-<h4 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h4>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/13/Big Data/MapReduce Naive Questions/" itemprop="url">
-                  MapReduce Naive Questions
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-13T20:52:15+08:00" content="2016-10-13">
-              2016-10-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="MapReduce-Questions"><a href="#MapReduce-Questions" class="headerlink" title="MapReduce Questions"></a>MapReduce Questions</h2><ol>
-<li><p>How to ensure the thread running in order?</p>
-<p>use the <strong>join</strong> method</p>
-<p>​</p>
-</li>
-<li><p>Forkjoin?</p>
-<ol>
-<li>implementation of <strong>ExecutorsSerivce</strong> interface</li>
-<li>take advantages of multiple processors<ul>
-<li>hard to balance task load across threads</li>
-<li>excessive overhead </li>
-</ul>
-</li>
-</ol>
-</li>
-<li><h5 id="Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking"><a href="#Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking" class="headerlink" title="Is ReadWriteLock (interface) the only solution for read&amp;write locking?"></a>Is <strong>ReadWriteLock</strong> <em>(interface)</em> the only solution for read&amp;write locking?</h5><ol>
-<li><p>MultiVersioning Consistency Control or MVCC</p>
-</li>
-<li><p>Most Relational database use MVCC</p>
-</li>
-<li><p>Operational Transformations (Google docs)</p>
-<p>​</p>
-</li>
-</ol>
-</li>
-<li><h2 id="volatile-vs-synchronize-vs-Lock"><a href="#volatile-vs-synchronize-vs-Lock" class="headerlink" title="volatile vs synchronize vs Lock"></a>volatile vs synchronize vs Lock</h2><ol>
-<li><h5 id="Volatile（guarantee-atomic）"><a href="#Volatile（guarantee-atomic）" class="headerlink" title="Volatile（guarantee atomic）"></a>Volatile（guarantee atomic）</h5></li>
-<li><p>changes to a <code>volatile</code> variable are always visible to other threads.</p>
-</li>
-<li><p><strong>volatile:</strong> guarantees the visibility of changes to variable across threads</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedObject</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>will be written back to main memory immediately by implementing volatile</p>
-<p>The <code>counter</code> variable in CPU cache may not be the same as in the Main Memory when two threads are trying to modify the counters synchronizely</p>
-<p><img src="http://tutorials.jenkov.com/images/java-concurrency/java-volatile-2.png" alt=""></p>
-<ol>
-<li>Reading and writing of volatile variables causes the variable to be read or written to main memory. Reading from and writing to main memory is <strong>more expensive</strong> than accessing the CPU cache</li>
-<li>only use volatile variables when you <strong>really need to enforce visibility of variables.</strong></li>
-<li>if two threads are <strong>both reading and writing to a shared variable</strong>, then using the <code>volatile</code> keyword for that is not enough. You need to use a <strong><a href="http://tutorials.jenkov.com/java-concurrency/synchronized.html" target="_blank" rel="external">synchronized</a></strong> in that case to <strong>guarantee</strong> that the reading and writing of the variable is <strong>atomic</strong>.</li>
-<li>As an alternative to a <code>synchronized</code> block you could also use one of the many atomic data types found in the <a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="external"><code>java.util.concurrent</code> package</a>. For instance, the <a href="http://tutorials.jenkov.com/java-util-concurrent/atomiclong.html" target="_blank" rel="external"><code>AtomicLong</code></a> or <a href="http://tutorials.jenkov.com/java-util-concurrent/atomicreference.html" target="_blank" rel="external"><code>AtomicReference</code></a> or one of the others.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>What is <strong>atomic action vs complex action</strong> ?</p>
-<ol>
-<li><p><strong>atomic action</strong></p>
-<ol>
-<li>Reads and writes are atomic for reference variables and for most primitive variables (all types except <code>long</code> and <code>double</code>).</li>
-<li>Reads and writes are atomic for <em>all</em> variables <u><strong>declared <code>volatile</code></strong></u> (<em>including</em> <code>long</code> and <code>double</code> variables).</li>
-</ol>
-</li>
-<li><p><strong>complex action</strong></p>
-<ol>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c++</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html" target="_blank" rel="external"><strong>Executors</strong></a>  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank" rel="external"><code>java.util.concurrent.ThreadPoolExecutor</code></a></p>
-<ol>
-<li><strong>Executor Interfaces</strong><ol>
-<li><strong><u>Executor</u></strong>: <code>e.execute(r);</code> <strong>e: Executor Object</strong>; <strong>r: Runnable Object</strong></li>
-<li><strong><u>ExecutorService:</u></strong> Like <code>execute</code>, <code>submit</code> accepts <code>Runnable</code> objects, but also accepts <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html" target="_blank" rel="external"><code>Callable</code></a> objects, which allow the task to return a  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html" target="_blank" rel="external"><code>Future</code></a> value.</li>
-</ol>
-</li>
-<li><strong><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html" target="_blank" rel="external">Thread Pool</a></strong><ol>
-<li><ul>
-<li><strong>fixed thread pool</strong> ensure degrade gracefully each HTTP request is handled by a separate thread.</li>
-<li>Applications create <u>new thread</u> for <u>new HTTP request</u>, the system will receive more request beyond its limitation</li>
-<li>Without setting a limitation, the  the application will suddenly stop responding to <em>all</em> requests.</li>
-<li>With a limit on the number of the threads that can be created, the application will not be servicing HTTP requests as quickly as they come in, but it will be servicing them as quickly as the system can sustain.</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>​</li>
-<li>Fork / Join</li>
-</ol>
-<ul>
-<li>They implement a <strong>work-stealing algorithm</strong> in that idle workers <code>steal</code> the work from those workers who are busy.</li>
-<li>Fork-Join breaks the task at hand into mini-tasks </li>
-<li>ideally no worker thread is idle </li>
-</ul>
-</li>
-</ol>
-<p><img src="http://howtodoinjava.com/wp-content/uploads/2014/05/fork-join-framework.png" alt=""></p>
-<h4 id="优雅降级的视角-Graceful-Degradation"><a href="#优雅降级的视角-Graceful-Degradation" class="headerlink" title="优雅降级的视角 Graceful Degradation"></a>优雅降级的视角 Graceful Degradation</h4><p>优雅降级关注于在最先进/最全能的浏览器上构建网站。在被认为“老的”或能力不足的浏览器中的测试，经常要等到开发周期的最后一个环节才进行，并且通常限制在主流浏览器（如IE、Mozzila等）的前一个发布版本中。</p>
-<p>在这种模式下，老的浏览器只可能提供差强人意（poor, but passable）的体验。或许会做些小补丁来适应某个特定浏览器，但这些浏览器毕竟不是关注的焦点，除了修正重大的错误，也不会再费多大的神了。</p>
+            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
 
           
         
@@ -893,203 +469,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
-                  Zero to One
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/03/起飞/图/Topological Order/" itemprop="url">
-                  Topological Order Direct Acyclic Order
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>All Edges point forward</strong></p>
-<p><strong>Any DAGs contains one Topological ordering</strong> </p>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><ul>
-<li>Course schedule that satisfies the prerequisite requirements</li>
-<li>Scheduling tasks such that when a task is ready to execute, all the tasks it depends on <strong>must have</strong> already completed </li>
-<li>Finding a chain of cause and effect that may lead to a particular event</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DirectedGraphNode</span></span>&#123;</div><div class="line">   <span class="keyword">int</span> label;</div><div class="line">   ArrayList&lt;DirectedGraphNode&gt; neighbors;</div><div class="line">   DirectedGraphNode(<span class="keyword">int</span> x)&#123;</div><div class="line">   		label = x;</div><div class="line">     	neighbors =<span class="keyword">new</span> Arraylist&lt;DirectedGraphNode&gt;();</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</div><div class="line">  	<span class="function"><span class="keyword">public</span> ArrayList&lt;DirectedGraphNode&gt; <span class="title">topSort</span><span class="params">(ArrayList&lt;DirectedGraphNode&gt; graph)</span></span>&#123;</div><div class="line">      ArrayList&lt;DirectedGraphNode&gt; result = <span class="keyword">new</span> ArrayList&lt;DirectedGraphNode&gt;();</div><div class="line">      HashMap&lt;DirectedGraphNode, Integer&gt; map = <span class="keyword">new</span> HashMap();</div><div class="line">      <span class="keyword">for</span>(DirectedGraphNode node: graph)&#123;</div><div class="line">        	<span class="keyword">for</span>(DirectedGraphNode neighbor: node.neighbors)&#123;</div><div class="line">              		<span class="keyword">if</span>(map.containsKey(neighbor))&#123;</div><div class="line">                      		map.put(neighbor, map.get(neighbor)+<span class="number">1</span>);</div><div class="line">              		&#125;<span class="keyword">else</span>&#123;</div><div class="line">                      		map.put(neighbor, <span class="number">1</span>);</div><div class="line">              		&#125;</div><div class="line">        	&#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      Queue&lt;DirectedGraphNode&gt; q = <span class="keyword">new</span> LinkedList&lt;DirectedGraphNode&gt;();</div><div class="line">      <span class="keyword">for</span> (DirectedGraphNode node : graph) &#123;</div><div class="line">        <span class="keyword">if</span> (!map.containsKey(node)) &#123;</div><div class="line">          q.offer(node);</div><div class="line">          result.add(node);</div><div class="line">      <span class="comment">// to find the starting node</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      <span class="keyword">while</span> (!q.isEmpty()) &#123;</div><div class="line">          DirectedGraphNode node = q.poll();</div><div class="line">          <span class="keyword">for</span> (DirectedGraphNode n : node.neighbors) &#123;</div><div class="line">              map.put(n, map.get(n) - <span class="number">1</span>);</div><div class="line">              <span class="keyword">if</span> (map.get(n) == <span class="number">0</span>) &#123;</div><div class="line">                  result.add(n);</div><div class="line">                  q.offer(n);</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/03/Hexo Categorizes/" itemprop="url">
-                  创建分类页面
+                <a class="post-title-link" href="/2016/10/03/Hexo/Hexo Categorizes/" itemprop="url">
+                  Hexo 如何创建分类  / How to create catogorize in Hexo
                 </a>
               
             
@@ -1573,11 +954,444 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/25/Big Data/Learn Hadoop/" itemprop="url">
+                  Hadoop Fly
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T17:12:52+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/big-data/" itemprop="url" rel="index">
+                    <span itemprop="name">big data</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>GRANT ALL ON <em>.</em> to ‘root’@’192.168.1.10’ IDENTIFIED BY ‘root’; //enable remote data transfer</p>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’192.168.1.10’ WITH GRANT OPTION;</p>
+<p>CREATE USER ‘root’@’%’ IDENTIFIED BY ‘password’;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/23/笑来详解/12. 为什么你总是半途而废/" itemprop="url">
+                  为什么你总是半途而废
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>你不需要检测，因为骨子里，就不愿意做的，需要坚持才行的事情，基本就做不好</li>
+<li>不需要坚持就能做好的事情需要三个技巧</li>
+</ol>
+<ul>
+<li>一念一世界，在开始做事情前，先就该事情赋予重大意义。</li>
+<li>思考如果不做这件事，会有什么负面意义</li>
+<li>利用<strong>社交</strong>进行学习</li>
+</ul>
+<p><strong>写出想象的细节</strong></p>
+<ol>
+<li>如果没有这项技能，那么现在有什么事情我根本就做不了？根本没有机会？</li>
+<li>在将来我会遇到什么样的困难？会失去什么可能的机会</li>
+<li>如果我最终仍然没有掌握这项技能，我就和那些人是一样的？他们的生活究竟是多样的凄惨？</li>
+</ol>
+<h5 id="3-通过社交来学习"><a href="#3-通过社交来学习" class="headerlink" title="3. 通过社交来学习"></a>3. 通过社交来学习</h5><p>把“很艰难”，“很痛苦”，“很难坚持”，“没有毅力就做不完”的事情变成</p>
+<p>“真好玩”，“停不下来”，“要能多玩儿一会儿就更好了” 的事情</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/23/我C++/How to exit nested for loop/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在做2017 的  Google C轮 中，</p>
+<p>break是没有办法跳出外面的for loop就会打来问题，goto又有更各种问题</p>
+<p><img src="https://pbs.twimg.com/media/DENImimUAAEMO2k.jpg" alt=""></p>
+<p>在两个for里面的condition中加入判断条件就好了</p>
+<p><img src="https://pbs.twimg.com/media/DENJcnLU0AAUB0L.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/23/笑来详解/不要半途而废1/" itemprop="url">
+                  回顾： 为什么你总是半途而废1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天笑来老师的文章可以总结为</p>
+<p>不解释，调用元认知，可增长</p>
+<p>执行力和其他能力一样，是一种可以通过后天锻炼的能力。</p>
+<h4 id="1-不解释"><a href="#1-不解释" class="headerlink" title="1. 不解释"></a>1. 不解释</h4><p>坚持原则：</p>
+<p><strong>绝不个他人公开争吵</strong></p>
+<p>对于网上的负面言论，最好的方式就是<strong>不解释</strong></p>
+<p>回应一个高分男生的要求，提供价值（物质和情感）但不求回报</p>
+<h4 id="2-调用元认知"><a href="#2-调用元认知" class="headerlink" title="2. 调用元认知"></a>2. 调用元认知</h4><p>当你面对非议或则不和离得指责时候，想发大火时候，可以启动一个弹窗模式，问自己<strong>发脾气能有助于解决问题吗</strong></p>
+<ol>
+<li>发脾气能有助于解决问题吗？</li>
+<li>有没有必要为这件事情浪费自己的注意力呢？</li>
+<li>同样的时间有没有更重要的事情可以做呢？</li>
+</ol>
+<h4 id="3-可增长（growth-mindset）"><a href="#3-可增长（growth-mindset）" class="headerlink" title="3. 可增长（growth mindset）"></a>3. 可增长（growth mindset）</h4><p>小时候的教育很多时候缺乏逻辑</p>
+<p>毅力，耐心，勤奋，我们能做的也只是在精神上督促自己，或者是看到那些名人的故事，给自己打气</p>
+<p>实际上，优秀品质绝非意念就能够养成的，而是靠科学的研究和合理的方法培养起来的</p>
+<p>记住 EQ和IQ都是可以通过锻炼学会的</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1618,7 +1432,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/tree/master/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1635,7 +1449,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
