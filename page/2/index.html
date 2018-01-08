@@ -267,8 +267,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
-                  Zero to One
+                <a class="post-title-link" href="/2016/10/13/Big Data/MapReduce Naive Questions/" itemprop="url">
+                  MapReduce Naive Questions
                 </a>
               
             
@@ -281,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
+            <time itemprop="dateCreated" datetime="2016-10-13T20:52:15+08:00" content="2016-10-13">
+              2016-10-13
             </time>
           </span>
 
@@ -311,113 +311,98 @@
       
         
           
-            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/03/Hexo/Hexo Categorizes/" itemprop="url">
-                  Hexo 如何创建分类  / How to create catogorize in Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>添加一个 分类 页面，并在菜单中显示页面链接。</p>
+            <h2 id="MapReduce-Questions"><a href="#MapReduce-Questions" class="headerlink" title="MapReduce Questions"></a>MapReduce Questions</h2><ol>
+<li><p>How to ensure the thread running in order?</p>
+<p>use the <strong>join</strong> method</p>
+<p>​</p>
+</li>
+<li><p>Forkjoin?</p>
 <ol>
-<li><p>新建一个页面，命名为 <code>categories</code> 。命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
+<li>implementation of <strong>ExecutorsSerivce</strong> interface</li>
+<li>take advantages of multiple processors<ul>
+<li>hard to balance task load across threads</li>
+<li>excessive overhead </li>
+</ul>
 </li>
-<li><p>编辑刚新建的页面，将页面的类型设置为 <code>categories</code> ，主题将自动为这个页面显示所有分类。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: 分类</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;categories&quot;</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>注意：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 <code>comments</code> 并将值设置为 <code>false</code>，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: 分类</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;categories&quot;</div><div class="line">comments: false</div><div class="line">---</div></pre></td></tr></table></figure>
-</li>
-<li><p>在菜单中添加链接。编辑theme(next)下面的 <code>_config.yml</code> ，将 <code>menu</code> 中的 <code>categories: /categories</code> 注释去掉，如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div></pre></td></tr></table></figure></li>
 </ol>
+</li>
+<li><h5 id="Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking"><a href="#Is-ReadWriteLock-interface-the-only-solution-for-read-amp-write-locking" class="headerlink" title="Is ReadWriteLock (interface) the only solution for read&amp;write locking?"></a>Is <strong>ReadWriteLock</strong> <em>(interface)</em> the only solution for read&amp;write locking?</h5><ol>
+<li><p>MultiVersioning Consistency Control or MVCC</p>
+</li>
+<li><p>Most Relational database use MVCC</p>
+</li>
+<li><p>Operational Transformations (Google docs)</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><h2 id="volatile-vs-synchronize-vs-Lock"><a href="#volatile-vs-synchronize-vs-Lock" class="headerlink" title="volatile vs synchronize vs Lock"></a>volatile vs synchronize vs Lock</h2><ol>
+<li><h5 id="Volatile（guarantee-atomic）"><a href="#Volatile（guarantee-atomic）" class="headerlink" title="Volatile（guarantee atomic）"></a>Volatile（guarantee atomic）</h5></li>
+<li><p>changes to a <code>volatile</code> variable are always visible to other threads.</p>
+</li>
+<li><p><strong>volatile:</strong> guarantees the visibility of changes to variable across threads</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedObject</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>will be written back to main memory immediately by implementing volatile</p>
+<p>The <code>counter</code> variable in CPU cache may not be the same as in the Main Memory when two threads are trying to modify the counters synchronizely</p>
+<p><img src="http://tutorials.jenkov.com/images/java-concurrency/java-volatile-2.png" alt=""></p>
+<ol>
+<li>Reading and writing of volatile variables causes the variable to be read or written to main memory. Reading from and writing to main memory is <strong>more expensive</strong> than accessing the CPU cache</li>
+<li>only use volatile variables when you <strong>really need to enforce visibility of variables.</strong></li>
+<li>if two threads are <strong>both reading and writing to a shared variable</strong>, then using the <code>volatile</code> keyword for that is not enough. You need to use a <strong><a href="http://tutorials.jenkov.com/java-concurrency/synchronized.html" target="_blank" rel="external">synchronized</a></strong> in that case to <strong>guarantee</strong> that the reading and writing of the variable is <strong>atomic</strong>.</li>
+<li>As an alternative to a <code>synchronized</code> block you could also use one of the many atomic data types found in the <a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="external"><code>java.util.concurrent</code> package</a>. For instance, the <a href="http://tutorials.jenkov.com/java-util-concurrent/atomiclong.html" target="_blank" rel="external"><code>AtomicLong</code></a> or <a href="http://tutorials.jenkov.com/java-util-concurrent/atomicreference.html" target="_blank" rel="external"><code>AtomicReference</code></a> or one of the others.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>What is <strong>atomic action vs complex action</strong> ?</p>
+<ol>
+<li><p><strong>atomic action</strong></p>
+<ol>
+<li>Reads and writes are atomic for reference variables and for most primitive variables (all types except <code>long</code> and <code>double</code>).</li>
+<li>Reads and writes are atomic for <em>all</em> variables <u><strong>declared <code>volatile</code></strong></u> (<em>including</em> <code>long</code> and <code>double</code> variables).</li>
+</ol>
+</li>
+<li><p><strong>complex action</strong></p>
+<ol>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c++</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html" target="_blank" rel="external"><strong>Executors</strong></a>  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank" rel="external"><code>java.util.concurrent.ThreadPoolExecutor</code></a></p>
+<ol>
+<li><strong>Executor Interfaces</strong><ol>
+<li><strong><u>Executor</u></strong>: <code>e.execute(r);</code> <strong>e: Executor Object</strong>; <strong>r: Runnable Object</strong></li>
+<li><strong><u>ExecutorService:</u></strong> Like <code>execute</code>, <code>submit</code> accepts <code>Runnable</code> objects, but also accepts <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html" target="_blank" rel="external"><code>Callable</code></a> objects, which allow the task to return a  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html" target="_blank" rel="external"><code>Future</code></a> value.</li>
+</ol>
+</li>
+<li><strong><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html" target="_blank" rel="external">Thread Pool</a></strong><ol>
+<li><ul>
+<li><strong>fixed thread pool</strong> ensure degrade gracefully each HTTP request is handled by a separate thread.</li>
+<li>Applications create <u>new thread</u> for <u>new HTTP request</u>, the system will receive more request beyond its limitation</li>
+<li>Without setting a limitation, the  the application will suddenly stop responding to <em>all</em> requests.</li>
+<li>With a limit on the number of the threads that can be created, the application will not be servicing HTTP requests as quickly as they come in, but it will be servicing them as quickly as the system can sustain.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>​</li>
+<li>Fork / Join</li>
+</ol>
+<ul>
+<li>They implement a <strong>work-stealing algorithm</strong> in that idle workers <code>steal</code> the work from those workers who are busy.</li>
+<li>Fork-Join breaks the task at hand into mini-tasks </li>
+<li>ideally no worker thread is idle </li>
+</ul>
+</li>
+</ol>
+<p><img src="http://howtodoinjava.com/wp-content/uploads/2014/05/fork-join-framework.png" alt=""></p>
+<h4 id="优雅降级的视角-Graceful-Degradation"><a href="#优雅降级的视角-Graceful-Degradation" class="headerlink" title="优雅降级的视角 Graceful Degradation"></a>优雅降级的视角 Graceful Degradation</h4><p>优雅降级关注于在最先进/最全能的浏览器上构建网站。在被认为“老的”或能力不足的浏览器中的测试，经常要等到开发周期的最后一个环节才进行，并且通常限制在主流浏览器（如IE、Mozzila等）的前一个发布版本中。</p>
+<p>在这种模式下，老的浏览器只可能提供差强人意（poor, but passable）的体验。或许会做些小补丁来适应某个特定浏览器，但这些浏览器毕竟不是关注的焦点，除了修正重大的错误，也不会再费多大的神了。</p>
 
           
         
@@ -575,8 +560,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/28/Linux/messy/" itemprop="url">
-                  messy stuff
+                <a class="post-title-link" href="/2016/10/03/Hexo/Hexo Categorizes/" itemprop="url">
+                  Hexo 如何创建分类  / How to create catogorize in Hexo
                 </a>
               
             
@@ -589,30 +574,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T18:12:09+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
+              2016-10-03
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/os/" itemprop="url" rel="index">
-                    <span itemprop="name">operating system</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -638,48 +604,113 @@
       
         
           
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">touch tmp</div><div class="line"></div><div class="line"></div><div class="line">rm -r <span class="comment">// recursively remove </span></div><div class="line"></div><div class="line">touch run.py</div><div class="line"></div><div class="line">cp run1.py run2.py</div><div class="line"></div><div class="line">mv run1.py /tmp</div><div class="line"></div><div class="line">mv run1.py run2.py <span class="comment">// rename run1.py to run2.py</span></div></pre></td></tr></table></figure>
-<p><strong>cat</strong></p>
-<p><code>cat run.py</code> // show the content of the run.py file</p>
-<p><code>echo &quot;123&quot; &gt; run3.py</code></p>
-<p> <code>cat run.py &gt; run2.py</code></p>
-<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p><strong>grep:</strong></p>
-<ul>
-<li><p>search the file cotent</p>
+            <p>添加一个 分类 页面，并在菜单中显示页面链接。</p>
+<ol>
+<li><p>新建一个页面，命名为 <code>categories</code> 。命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
 </li>
-<li><p>search previous commands</p>
-<p><code>cat run.py | grep run.py</code></p>
+<li><p>编辑刚新建的页面，将页面的类型设置为 <code>categories</code> ，主题将自动为这个页面显示所有分类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: 分类</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;categories&quot;</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>注意：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 <code>comments</code> 并将值设置为 <code>false</code>，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: 分类</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;categories&quot;</div><div class="line">comments: false</div><div class="line">---</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p><strong>ifconfig:</strong> show the <em>ethernet card</em> info</p>
-<p>eg：<code>ifconfig | grep inet | grep broadcast:  obtain ip</code></p>
-<p>the one end with 1</p>
-<p><img src="https://pbs.twimg.com/media/CtcAmn3UkAAdjH6.jpg" alt=""></p>
-<p><strong>ps:</strong> check the current process</p>
-<p><code>ps -a | 477</code></p>
-<p><strong>shell</strong></p>
-<p>cannot execute <code>./demo.sh</code> directly </p>
-<p>need to chmod x+  </p>
-<h3 id="Communicate-with-server"><a href="#Communicate-with-server" class="headerlink" title="Communicate with server"></a>Communicate with server</h3><p><strong>wget</strong></p>
-<p><strong>scp</strong></p>
-<ul>
-<li><p><strong>download the file:</strong> scp user@ip: server_path local_path</p>
-<ul>
-<li><p>eg: <code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code> // normally the port number is 22, but it is configurable</p>
-</li>
-<li><p><code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code></p>
-<p>​</p>
-</li>
-</ul>
-</li>
-<li><p><strong>download directory:</strong>  scp -r user@ip: server_path local_path </p>
-<ul>
-<li>eg: <code>scp -r -p22 root@192.168. 31.193:~/tmp ~/</code>  <strong>copy the directory to the server</strong></li>
-</ul>
-</li>
-<li><p><strong>Upload file:</strong> scp <strong>local_path</strong> user@ip:<strong>server_path</strong></p>
-</li>
-</ul>
+<li><p>在菜单中添加链接。编辑theme(next)下面的 <code>_config.yml</code> ，将 <code>menu</code> 中的 <code>categories: /categories</code> 注释去掉，如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
+                  Zero to One
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
+              2016-10-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
 
           
         
@@ -799,6 +830,160 @@
 <p>update 是同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引，这样才能获取到最新的软件包。</p>
 <p><strong>apt-get update</strong> updates the list of available packages and their versions, but it does not install or upgrade any packages.<br><strong>apt-get upgrade</strong> actually installs newer versions of the packages you have.</p>
 <p>apt-get update 更新软件列表。<br>apt-get upgrade 更新软件。<br>apt-get dist-upgrade 更新系统版本。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/28/Linux/messy/" itemprop="url">
+                  messy stuff
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-28T18:12:09+08:00" content="2016-09-28">
+              2016-09-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">operating system</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">touch tmp</div><div class="line"></div><div class="line"></div><div class="line">rm -r <span class="comment">// recursively remove </span></div><div class="line"></div><div class="line">touch run.py</div><div class="line"></div><div class="line">cp run1.py run2.py</div><div class="line"></div><div class="line">mv run1.py /tmp</div><div class="line"></div><div class="line">mv run1.py run2.py <span class="comment">// rename run1.py to run2.py</span></div></pre></td></tr></table></figure>
+<p><strong>cat</strong></p>
+<p><code>cat run.py</code> // show the content of the run.py file</p>
+<p><code>echo &quot;123&quot; &gt; run3.py</code></p>
+<p> <code>cat run.py &gt; run2.py</code></p>
+<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p><strong>grep:</strong></p>
+<ul>
+<li><p>search the file cotent</p>
+</li>
+<li><p>search previous commands</p>
+<p><code>cat run.py | grep run.py</code></p>
+</li>
+</ul>
+<p><strong>ifconfig:</strong> show the <em>ethernet card</em> info</p>
+<p>eg：<code>ifconfig | grep inet | grep broadcast:  obtain ip</code></p>
+<p>the one end with 1</p>
+<p><img src="https://pbs.twimg.com/media/CtcAmn3UkAAdjH6.jpg" alt=""></p>
+<p><strong>ps:</strong> check the current process</p>
+<p><code>ps -a | 477</code></p>
+<p><strong>shell</strong></p>
+<p>cannot execute <code>./demo.sh</code> directly </p>
+<p>need to chmod x+  </p>
+<h3 id="Communicate-with-server"><a href="#Communicate-with-server" class="headerlink" title="Communicate with server"></a>Communicate with server</h3><p><strong>wget</strong></p>
+<p><strong>scp</strong></p>
+<ul>
+<li><p><strong>download the file:</strong> scp user@ip: server_path local_path</p>
+<ul>
+<li><p>eg: <code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code> // normally the port number is 22, but it is configurable</p>
+</li>
+<li><p><code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p><strong>download directory:</strong>  scp -r user@ip: server_path local_path </p>
+<ul>
+<li>eg: <code>scp -r -p22 root@192.168. 31.193:~/tmp ~/</code>  <strong>copy the directory to the server</strong></li>
+</ul>
+</li>
+<li><p><strong>Upload file:</strong> scp <strong>local_path</strong> user@ip:<strong>server_path</strong></p>
+</li>
+</ul>
 
           
         
@@ -1191,8 +1376,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/Hexo/Why Hexo/" itemprop="url">
-                  Why Hexo
+                <a class="post-title-link" href="/2016/09/23/笑来详解/遇到贵人的科学方法/" itemprop="url">
+                  遇到贵人的科学方法
                 </a>
               
             
@@ -1235,115 +1420,31 @@
       
         
           
-            <h3 id="Why-Hexo"><a href="#Why-Hexo" class="headerlink" title="Why Hexo?"></a>Why Hexo?</h3><p>There are some static blog framework like Jekyll, Hexo</p>
-<ol>
-<li>Jerky is based on Ruby, hence you need the Ruby environment.</li>
-<li>Hero is base on NodeJS which has less bug and hard-fork</li>
-<li>The preview session in Jekyll is primitive, you can go <code>localhost:4000</code> </li>
-<li>Hexo has more themes than Jekyll</li>
-<li>Sir Xiaolai use Hexo</li>
+            <ol>
+<li>遇到贵人是有方法论寻得</li>
+<li>求助是一种因隐蔽的，意义巨大的交易，是正确展示自我价值的艺术</li>
 </ol>
-<p><a href="https://hexo.io/zh-cn/docs/front-matter.html#" target="_blank" rel="external">https://hexo.io/zh-cn/docs/front-matter.html#</a></p>
-<p><a href="https://hexo.io/docs/troubleshooting.html#Error-with-DTrace-Mac-OS-X" target="_blank" rel="external">Error on DTrace</a></p>
-<p>New shortcut</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/23/我C++/How to exit nested for loop/" itemprop="url">
-                  Untitled
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T16:29:45+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在做2017 的  Google C轮 中，</p>
-<p>break是没有办法跳出外面的for loop就会打来问题，goto又有更各种问题</p>
-<p><img src="https://pbs.twimg.com/media/DENImimUAAEMO2k.jpg" alt=""></p>
-<p>在两个for里面的condition中加入判断条件就好了</p>
-<p><img src="https://pbs.twimg.com/media/DENJcnLU0AAUB0L.jpg" alt=""></p>
+<p>无关：修养，情怀，人生的阀门</p>
+<p>目标：清晰</p>
+<p>总原则：首先自己是个贵人</p>
+<p>你不优秀就没有有效的社交</p>
+<p>遇到贵人，并获取帮助的12条原则：</p>
+<ol>
+<li>乐观的人更容易</li>
+<li>贵人更容易</li>
+<li>能帮助他人进步的人更容易</li>
+<li>优秀的，值得尊重的人，更容易</li>
+<li>乐于分享的人</li>
+<li>不给他人制造麻烦的人</li>
+<li>不以求助为耻的人</li>
+<li>“以和为贵”，“独贵贵不如众贵贵”</li>
+<li>人们的成功来自于别人希望看到他成功</li>
+<li>做正确的事情</li>
+<li>活在未来，别人在他们身上看到未来</li>
+</ol>
+<p>“思考成长，耐心验证，总结提炼”</p>
+<p>求助并非乞讨而是交易（隐蔽的，意义巨大的交易）</p>
+<p>因为贵人看到了你的价值</p>
 
           
         
@@ -1417,7 +1518,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/tree/master/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
