@@ -452,6 +452,100 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
+                  Zero to One
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
+              2016-10-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/03/笑来详解/深入理解笑来博客/" itemprop="url">
                   深入理解笑来博客
                 </a>
@@ -666,8 +760,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/03/ZeroToOne/" itemprop="url">
-                  Zero to One
+                <a class="post-title-link" href="/2016/09/28/Linux/messy/" itemprop="url">
+                  messy stuff
                 </a>
               
             
@@ -680,11 +774,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T14:48:37+08:00" content="2016-10-03">
-              2016-10-03
+            <time itemprop="dateCreated" datetime="2016-09-28T18:12:09+08:00" content="2016-09-28">
+              2016-09-28
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">operating system</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -710,7 +823,48 @@
       
         
           
-            <p><img src="https://pbs.twimg.com/media/Ct0uzdRVUAAjRHE.jpg" alt=""></p>
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">touch tmp</div><div class="line"></div><div class="line"></div><div class="line">rm -r <span class="comment">// recursively remove </span></div><div class="line"></div><div class="line">touch run.py</div><div class="line"></div><div class="line">cp run1.py run2.py</div><div class="line"></div><div class="line">mv run1.py /tmp</div><div class="line"></div><div class="line">mv run1.py run2.py <span class="comment">// rename run1.py to run2.py</span></div></pre></td></tr></table></figure>
+<p><strong>cat</strong></p>
+<p><code>cat run.py</code> // show the content of the run.py file</p>
+<p><code>echo &quot;123&quot; &gt; run3.py</code></p>
+<p> <code>cat run.py &gt; run2.py</code></p>
+<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p><strong>grep:</strong></p>
+<ul>
+<li><p>search the file cotent</p>
+</li>
+<li><p>search previous commands</p>
+<p><code>cat run.py | grep run.py</code></p>
+</li>
+</ul>
+<p><strong>ifconfig:</strong> show the <em>ethernet card</em> info</p>
+<p>eg：<code>ifconfig | grep inet | grep broadcast:  obtain ip</code></p>
+<p>the one end with 1</p>
+<p><img src="https://pbs.twimg.com/media/CtcAmn3UkAAdjH6.jpg" alt=""></p>
+<p><strong>ps:</strong> check the current process</p>
+<p><code>ps -a | 477</code></p>
+<p><strong>shell</strong></p>
+<p>cannot execute <code>./demo.sh</code> directly </p>
+<p>need to chmod x+  </p>
+<h3 id="Communicate-with-server"><a href="#Communicate-with-server" class="headerlink" title="Communicate with server"></a>Communicate with server</h3><p><strong>wget</strong></p>
+<p><strong>scp</strong></p>
+<ul>
+<li><p><strong>download the file:</strong> scp user@ip: server_path local_path</p>
+<ul>
+<li><p>eg: <code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code> // normally the port number is 22, but it is configurable</p>
+</li>
+<li><p><code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p><strong>download directory:</strong>  scp -r user@ip: server_path local_path </p>
+<ul>
+<li>eg: <code>scp -r -p22 root@192.168. 31.193:~/tmp ~/</code>  <strong>copy the directory to the server</strong></li>
+</ul>
+</li>
+<li><p><strong>Upload file:</strong> scp <strong>local_path</strong> user@ip:<strong>server_path</strong></p>
+</li>
+</ul>
 
           
         
@@ -830,160 +984,6 @@
 <p>update 是同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引，这样才能获取到最新的软件包。</p>
 <p><strong>apt-get update</strong> updates the list of available packages and their versions, but it does not install or upgrade any packages.<br><strong>apt-get upgrade</strong> actually installs newer versions of the packages you have.</p>
 <p>apt-get update 更新软件列表。<br>apt-get upgrade 更新软件。<br>apt-get dist-upgrade 更新系统版本。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/28/Linux/messy/" itemprop="url">
-                  messy stuff
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T18:12:09+08:00" content="2016-09-28">
-              2016-09-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/os/" itemprop="url" rel="index">
-                    <span itemprop="name">operating system</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">touch tmp</div><div class="line"></div><div class="line"></div><div class="line">rm -r <span class="comment">// recursively remove </span></div><div class="line"></div><div class="line">touch run.py</div><div class="line"></div><div class="line">cp run1.py run2.py</div><div class="line"></div><div class="line">mv run1.py /tmp</div><div class="line"></div><div class="line">mv run1.py run2.py <span class="comment">// rename run1.py to run2.py</span></div></pre></td></tr></table></figure>
-<p><strong>cat</strong></p>
-<p><code>cat run.py</code> // show the content of the run.py file</p>
-<p><code>echo &quot;123&quot; &gt; run3.py</code></p>
-<p> <code>cat run.py &gt; run2.py</code></p>
-<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p><strong>grep:</strong></p>
-<ul>
-<li><p>search the file cotent</p>
-</li>
-<li><p>search previous commands</p>
-<p><code>cat run.py | grep run.py</code></p>
-</li>
-</ul>
-<p><strong>ifconfig:</strong> show the <em>ethernet card</em> info</p>
-<p>eg：<code>ifconfig | grep inet | grep broadcast:  obtain ip</code></p>
-<p>the one end with 1</p>
-<p><img src="https://pbs.twimg.com/media/CtcAmn3UkAAdjH6.jpg" alt=""></p>
-<p><strong>ps:</strong> check the current process</p>
-<p><code>ps -a | 477</code></p>
-<p><strong>shell</strong></p>
-<p>cannot execute <code>./demo.sh</code> directly </p>
-<p>need to chmod x+  </p>
-<h3 id="Communicate-with-server"><a href="#Communicate-with-server" class="headerlink" title="Communicate with server"></a>Communicate with server</h3><p><strong>wget</strong></p>
-<p><strong>scp</strong></p>
-<ul>
-<li><p><strong>download the file:</strong> scp user@ip: server_path local_path</p>
-<ul>
-<li><p>eg: <code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code> // normally the port number is 22, but it is configurable</p>
-</li>
-<li><p><code>scp -p22 ~/test.txt root@192.168.31.193:~/tmp/test1.txt</code></p>
-<p>​</p>
-</li>
-</ul>
-</li>
-<li><p><strong>download directory:</strong>  scp -r user@ip: server_path local_path </p>
-<ul>
-<li>eg: <code>scp -r -p22 root@192.168. 31.193:~/tmp ~/</code>  <strong>copy the directory to the server</strong></li>
-</ul>
-</li>
-<li><p><strong>Upload file:</strong> scp <strong>local_path</strong> user@ip:<strong>server_path</strong></p>
-</li>
-</ul>
 
           
         
@@ -1376,8 +1376,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/笑来详解/遇到贵人的科学方法/" itemprop="url">
-                  遇到贵人的科学方法
+                <a class="post-title-link" href="/2016/09/23/EOS基础知识/Richard Contract/" itemprop="url">
+                  Ricardian Contract
                 </a>
               
             
@@ -1420,31 +1420,10 @@
       
         
           
-            <ol>
-<li>遇到贵人是有方法论寻得</li>
-<li>求助是一种因隐蔽的，意义巨大的交易，是正确展示自我价值的艺术</li>
-</ol>
-<p>无关：修养，情怀，人生的阀门</p>
-<p>目标：清晰</p>
-<p>总原则：首先自己是个贵人</p>
-<p>你不优秀就没有有效的社交</p>
-<p>遇到贵人，并获取帮助的12条原则：</p>
-<ol>
-<li>乐观的人更容易</li>
-<li>贵人更容易</li>
-<li>能帮助他人进步的人更容易</li>
-<li>优秀的，值得尊重的人，更容易</li>
-<li>乐于分享的人</li>
-<li>不给他人制造麻烦的人</li>
-<li>不以求助为耻的人</li>
-<li>“以和为贵”，“独贵贵不如众贵贵”</li>
-<li>人们的成功来自于别人希望看到他成功</li>
-<li>做正确的事情</li>
-<li>活在未来，别人在他们身上看到未来</li>
-</ol>
-<p>“思考成长，耐心验证，总结提炼”</p>
-<p>求助并非乞讨而是交易（隐蔽的，意义巨大的交易）</p>
-<p>因为贵人看到了你的价值</p>
+            <h4 id="李嘉图合约-Ricardian-Contract"><a href="#李嘉图合约-Ricardian-Contract" class="headerlink" title="李嘉图合约 Ricardian Contract"></a>李嘉图合约 Ricardian Contract</h4><p>bowtie 模型</p>
+<p>通过Hash to connect World of Law and World of Accountancy</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/RC-bow-tie.png" alt=""></p>
+<p>digital signature</p>
 
           
         
